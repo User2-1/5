@@ -52,17 +52,18 @@ type Dictionary = {
     p2: string;
     p3: string;
   };
-  contact: {
-    title: string;
-    intro: string;
-    phoneLabel: string;
-    phoneValue: string;
-    emailLabel: string;
-    emailValue: string;
-    shipping: string;
-    minOrder: string;
-    address: string[];
-  };
+    contact: {
+      title: string;
+      intro: string;
+      phoneLabel: string;
+      phoneValue: string;
+      phoneValue2: string;
+      emailLabel: string;
+      emailValue: string;
+      shipping: string;
+      minOrder: string;
+      address: string[];
+    };
   footer: {
     positioning: string;
     rights: string;
