@@ -257,17 +257,57 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
           <h3 className="text-3xl font-semibold">{content.contact.title}</h3>
           <p className="mt-4 max-w-3xl text-white/75">{content.contact.intro}</p>
 
-          <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/80">
-            {content.contact.address.map((line, index) => (
-              <p key={line} className={index === 0 ? "font-medium text-white" : ""}>
-                {line}
-              </p>
-            ))}
-          </div>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="space-y-4">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/80">
+                {content.contact.address.map((line, index) => (
+                  <p key={line} className={index === 0 ? "font-medium text-white" : ""}>
+                    {line}
+                  </p>
+                ))}
+              </div>
 
-          <div className="mt-5 flex flex-wrap gap-2 text-sm text-white/75">
-            <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.shipping}</span>
-            <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.minOrder}</span>
+              <div className="flex flex-wrap gap-2 text-sm text-white/75">
+                <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.shipping}</span>
+                <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.minOrder}</span>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-[#C8A774]/50">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C8A774]/10 text-[#C8A774]">
+                    <Phone size={18} />
+                  </div>
+                  <div className="flex-1 overflow-hidden">
+                    <p className="text-[10px] uppercase tracking-[0.15em] text-[#C8A774] opacity-80">{content.contact.phoneLabel}</p>
+                    <a
+                      href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
+                      className="mt-0.5 block truncate text-lg font-medium text-white transition hover:text-[#C8A774]"
+                    >
+                      {content.contact.phoneValue}
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-[#C8A774]/50">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C8A774]/10 text-[#C8A774]">
+                    <Mail size={18} />
+                  </div>
+                  <div className="flex-1 overflow-hidden">
+                    <p className="text-[10px] uppercase tracking-[0.15em] text-[#C8A774] opacity-80">{content.contact.emailLabel}</p>
+                    <a
+                      href={`mailto:${content.contact.emailValue}`}
+                      className="mt-0.5 block truncate text-lg font-medium text-white transition hover:text-[#C8A774]"
+                    >
+                      {content.contact.emailValue}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
