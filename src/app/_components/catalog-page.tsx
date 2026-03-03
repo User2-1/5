@@ -611,12 +611,12 @@ export default function CatalogPage({ lang }: { lang: Lang }) {
           <div className="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.45)]" aria-hidden="true" />
 
           <div className="absolute inset-0 flex items-end">
-            <div className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
-              <div className="max-w-3xl space-y-5">
-                <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">{content.hero.headline}</h1>
-                <p className="max-w-2xl text-base text-white/85 md:text-xl">{content.hero.subheadline}</p>
-                <p className="text-sm text-white/75 md:text-base">{content.hero.trustLine}</p>
-                <div className="flex flex-wrap gap-3 pt-1">
+          <div className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
+            <div className="max-w-3xl space-y-5">
+              <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">{content.hero.headline}</h1>
+              {content.hero.subheadline && <p className="max-w-2xl text-base text-white/85 md:text-xl">{content.hero.subheadline}</p>}
+              <p className="text-sm text-white/75 md:text-base">{content.hero.trustLine}</p>
+              <div className="flex flex-wrap gap-3 pt-1">
                   <a
                     href="#contact"
                     className="rounded-full bg-[#C8A774] px-5 py-2.5 text-sm font-medium text-[#111111] transition hover:bg-[#d1b486]"
