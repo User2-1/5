@@ -255,54 +255,75 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
       </section>
 
       <section id="contact" className="bg-black/25">
-        <div className="mx-auto max-w-7xl px-6 py-12">
-          <h3 className="text-3xl font-semibold">{content.contact.title}</h3>
-          <p className="mt-4 max-w-3xl text-white/75">{content.contact.intro}</p>
+        <div className="mx-auto max-w-7xl px-6 py-16">
+          <div className="mb-10">
+            <h3 className="text-3xl font-semibold">{content.contact.title}</h3>
+            <p className="mt-4 max-w-2xl text-white/75">{content.contact.intro}</p>
+          </div>
 
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="space-y-4">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/80">
-                {content.contact.address.map((line, index) => (
-                  <p key={line} className={index === 0 ? "font-medium text-white" : ""}>
-                    {line}
-                  </p>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-2 text-sm text-white/75">
-                <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.shipping}</span>
-                <span className="rounded-full border border-white/20 px-3 py-1.5">{content.contact.minOrder}</span>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-[#C8A774]/50">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C8A774]/10 text-[#C8A774]">
-                    <Phone size={18} />
-                  </div>
-                  <div className="flex-1 overflow-hidden">
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[#C8A774] opacity-80">{content.contact.phoneLabel}</p>
-                    <a
-                      href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
-                      className="mt-0.5 block truncate text-lg font-medium text-white transition hover:text-[#C8A774]"
-                    >
-                      {content.contact.phoneValue}
-                    </a>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div className="space-y-6">
+              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-sm text-white/80">
+                <div className="flex items-start gap-4">
+                  <MapPin size={20} className="mt-1 shrink-0 text-[#C8A774]" />
+                  <div className="space-y-1">
+                    {content.contact.address.map((line, index) => (
+                      <p key={line} className={index === 0 ? "font-semibold text-white" : ""}>
+                        {line}
+                      </p>
+                    ))}
                   </div>
                 </div>
               </div>
 
-              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-[#C8A774]/50">
-                <div className="flex items-center gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#C8A774]/10 text-[#C8A774]">
-                    <Mail size={18} />
+              <div className="flex flex-wrap gap-3">
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-white/20">
+                  <Truck size={14} className="text-[#C8A774]" />
+                  <span>{content.contact.shipping}</span>
+                </div>
+                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-white/20">
+                  <Package size={14} className="text-[#C8A774]" />
+                  <span>{content.contact.minOrder}</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:border-[#C8A774]/50">
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C8A774]/10 text-[#C8A774] transition group-hover:bg-[#C8A774]/20">
+                    <Phone size={20} />
                   </div>
                   <div className="flex-1 overflow-hidden">
-                    <p className="text-[10px] uppercase tracking-[0.15em] text-[#C8A774] opacity-80">{content.contact.emailLabel}</p>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70">{content.contact.phoneLabel}</p>
+                    <div className="mt-1 space-y-1">
+                      <a
+                        href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
+                        className="block text-xl font-medium text-white transition hover:text-[#C8A774]"
+                      >
+                        {content.contact.phoneValue}
+                      </a>
+                      <a
+                        href={`tel:${content.contact.phoneValue2.replace(/\s/g, "")}`}
+                        className="block text-xl font-medium text-white transition hover:text-[#C8A774]"
+                      >
+                        {content.contact.phoneValue2}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:border-[#C8A774]/50">
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C8A774]/10 text-[#C8A774] transition group-hover:bg-[#C8A774]/20">
+                    <Mail size={20} />
+                  </div>
+                  <div className="flex-1 overflow-hidden">
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70">{content.contact.emailLabel}</p>
                     <a
                       href={`mailto:${content.contact.emailValue}`}
-                      className="mt-0.5 block truncate text-lg font-medium text-white transition hover:text-[#C8A774]"
+                      className="mt-1 block truncate text-xl font-medium text-white transition hover:text-[#C8A774]"
                     >
                       {content.contact.emailValue}
                     </a>
