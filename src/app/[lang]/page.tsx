@@ -9,6 +9,12 @@ type LocalizedPageProps = {
 
 const LANGS: Lang[] = ["de", "en", "ru"];
 
+const dictionaries = {
+  de: () => import("@/dictionaries/de.json").then((module) => module.default),
+  en: () => import("@/dictionaries/en.json").then((module) => module.default),
+  ru: () => import("@/dictionaries/ru.json").then((module) => module.default),
+};
+
 export const dynamicParams = false;
 
 export function generateStaticParams() {
@@ -17,9 +23,12 @@ export function generateStaticParams() {
 
 export default async function LocalizedPage({ params }: LocalizedPageProps) {
   const { lang } = await params;
+  
   if (!LANGS.includes(lang as Lang)) {
     notFound();
   }
 
-  return <CatalogPage lang={lang as Lang} />;
+  const dictionary = await dictionaries[lang as Lang]();
+
+  return <CatalogPage lang={lang as Lang} dictionary={dictionary} />;
 }
