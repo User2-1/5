@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import NextLink from "next/link";
 import { ArrowRight, FileText, MapPin, Package, Truck } from "lucide-react";
 
 export type Lang = "de" | "en" | "ru";
