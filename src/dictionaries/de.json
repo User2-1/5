@@ -76,13 +76,17 @@
     "p2": "Unser Sortiment ist auf Langlebigkeit, Oberflächenpräzision und exzellente Verarbeitung ausgelegt.",
     "p3": "Dank lokaler Lagerhaltung garantieren wir schnelle Lieferzeiten und hohe Flexibilität."
   },
-  "contact": {
-    "title": "Information anfragen",
-    "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
-    "shipping": "Versand europaweit",
-    "minOrder": "Ab 1 Meter lieferbar",
-    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
-  },
+    "contact": {
+      "title": "Information anfragen",
+      "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
+      "phoneLabel": "Telefon",
+      "phoneValue": "+49 1622752072",
+      "emailLabel": "E-Mail",
+      "emailValue": "kunstleder5700@gmail.com",
+      "shipping": "Versand europaweit",
+      "minOrder": "Ab 1 Meter lieferbar",
+      "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
+    },
   "footer": {
     "positioning": "Österreichischer Distributor für Automotive- und Polstermaterialien.",
     "rights": "Alle Rechte vorbehalten."
