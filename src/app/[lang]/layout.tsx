@@ -4,9 +4,9 @@ import { type Lang } from "../_components/catalog-page";
 
 type LocalizedLayoutProps = {
   children: React.ReactNode;
-  params: {
+  params: Promise<{
     lang: string;
-  };
+  }>;
 };
 
 const LANGS: Lang[] = ["de", "en", "ru"];
@@ -29,12 +29,13 @@ const metadataByLang: Record<Lang, Metadata> = {
   },
 };
 
-export function generateMetadata({ params }: Omit<LocalizedLayoutProps, "children">): Metadata {
-  if (!LANGS.includes(params.lang as Lang)) {
+export async function generateMetadata({ params }: Omit<LocalizedLayoutProps, "children">): Promise<Metadata> {
+  const { lang } = await params;
+  if (!LANGS.includes(lang as Lang)) {
     notFound();
   }
 
-  return metadataByLang[params.lang as Lang];
+  return metadataByLang[lang as Lang];
 }
 
 export default function LocalizedLayout({ children }: LocalizedLayoutProps) {
