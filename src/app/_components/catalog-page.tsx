@@ -249,7 +249,7 @@ const contentByLang: Record<Lang, LocaleContent> = {
     ],
     hero: {
       headline: "",
-      subheadline: "For interior specialists, upholstery businesses, and vehicle converters across Europe.",
+      subheadline: "",
       trustLine: "In-stock from 1 meter · 2–4 day delivery across Europe",
       primaryCta: "Request Samples",
       secondaryCta: "View Materials",
@@ -259,7 +259,6 @@ const contentByLang: Record<Lang, LocaleContent> = {
       "Europe-wide delivery",
       "B2B specialist for automotive interiors",
       "Flexible order quantities from 1 meter",
-      "Technical data sheets available",
     ],
     materialsSectionTitle: "Series and Variants",
     materialsSectionSubtitle: "Materials",
