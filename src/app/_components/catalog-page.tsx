@@ -56,12 +56,14 @@ type Dictionary = {
     intro: string;
     shipping: string;
     minOrder: string;
+    address: string[];
   };
   footer: {
     positioning: string;
     rights: string;
   };
   metadata: {
+    brand: string;
     distributor: string;
   };
 };
@@ -72,7 +74,6 @@ const languages: { code: Lang; label: string }[] = [
   { code: "ru", label: "RU" },
 ];
 
-const companyAddress = ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"];
 const trustIcons = [Package, Truck, MapPin, ArrowRight] as const;
 
 export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictionary: Dictionary }) {
@@ -83,7 +84,7 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
       <header className="sticky top-0 z-30 border-b border-white/10 bg-[#111111]/95 backdrop-blur">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
           <div>
-            <p className="text-lg font-semibold tracking-tight">Leder Stoffe</p>
+            <p className="text-lg font-semibold tracking-tight">{content.metadata.brand}</p>
             <p className="text-xs uppercase tracking-[0.2em] text-[#C8A774]">{content.metadata.distributor}</p>
           </div>
 
@@ -116,7 +117,7 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
         <div className="relative aspect-[16/9] min-h-[60vh] w-full md:min-h-[72vh]">
           <img
             src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=2400&q=80"
-            alt="Premium automotive leather interior with stitching detail"
+            alt="Premium automotive leather interior"
             className="h-full w-full object-cover [filter:saturate(0.85)_brightness(0.74)_contrast(1.08)_hue-rotate(8deg)]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/20" aria-hidden="true" />
@@ -241,7 +242,7 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
             </div>
             <div className="flex items-start gap-2 rounded-lg border border-white/10 px-3 py-2">
               <MapPin size={15} className="mt-0.5" />
-              <p>Austria</p>
+              <p>{content.contact.address[3]}</p>
             </div>
           </div>
         </div>
@@ -253,7 +254,7 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
           <p className="mt-4 max-w-3xl text-white/75">{content.contact.intro}</p>
 
           <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/80">
-            {companyAddress.map((line, index) => (
+            {content.contact.address.map((line, index) => (
               <p key={line} className={index === 0 ? "font-medium text-white" : ""}>
                 {line}
               </p>
@@ -269,9 +270,9 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
 
       <footer className="border-t border-white/10 bg-[#0C0C0C]">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-white/60 md:flex-row md:items-center md:justify-between">
-          <p>Leder Stoffe - {content.footer.positioning}</p>
+          <p>{content.metadata.brand} - {content.footer.positioning}</p>
           <p>
-            © {new Date().getFullYear()} Leder Stoffe. {content.footer.rights}
+            © {new Date().getFullYear()} {content.metadata.brand}. {content.footer.rights}
           </p>
         </div>
       </footer>
