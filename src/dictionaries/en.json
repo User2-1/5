@@ -6,83 +6,87 @@
     "about": "About Us",
     "contact": "Contact"
   },
-  "hero": {
-    "headline": "Premium Automotive Materials",
-    "subheadline": "Synthetic leather solutions for professional interiors.",
-    "paragraph": "B2B partner for high-quality PU and PDF materials stocked in Austria. Delivery across Europe in 2-4 business days.",
-    "primaryCta": "Request Samples",
-    "secondaryCta": "View Portfolio"
-  },
-  "trustBar": [
-    "Stocked in Austria",
-    "Europe-wide shipping",
-    "Automotive B2B specialist",
-    "Flexible from 1 meter"
-  ],
-  "materials": {
-    "sectionTitle": "Collections",
-    "sectionSubtitle": "Portfolio",
-    "placeholders": {
-      "image": "Product image",
-      "colors": "Colors",
-      "price": "Price on request",
-      "details": "Details & Samples"
+    "hero": {
+      "headline": "Premium Automotive Materials",
+      "subheadline": "Synthetic leather solutions for professional interiors.",
+      "paragraph": "B2B partner for high-quality PU and PVC materials stocked in Austria. Delivery across Europe in 2-4 business days.",
+      "primaryCta": "Request Samples",
+      "secondaryCta": "View Portfolio"
     },
-    "items": [
-      {
-        "id": "black-matte",
-        "name": "Black Matte",
-        "series": "Black Series",
-        "shortDescription": "Elegant matte surface for premium vehicle interiors.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
+    "trustBar": [
+      "Stocked in Austria",
+      "Europe-wide shipping",
+      "Automotive B2B specialist",
+      "Flexible from 1 meter"
+    ],
+    "materials": {
+      "sectionTitle": "Collections",
+      "sectionSubtitle": "Portfolio",
+      "placeholders": {
+        "image": "Product image",
+        "colors": "Colors",
+        "price": "Price on request",
+        "details": "Details & Samples"
       },
-      {
-        "id": "black-dynamic",
-        "name": "Black Dynamic",
-        "series": "Black Series",
-        "shortDescription": "Fine texture for precise cockpit area processing.",
-        "technicalHighlights": ["Thickness: 1.2 mm", "Martindale: 100k+", "Width: 140 cm"]
-      },
-      {
-        "id": "stone-matte",
-        "name": "Stone Matte",
-        "series": "Stone Series",
-        "shortDescription": "Neutral tone for contemporary design and durable upholstery.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
-      }
-    ]
-  },
-  "applications": {
-    "title": "Applications",
-    "intro": "Our materials are used in:",
-    "items": [
-      {
-        "title": "Automotive Interiors",
-        "description": "Durable solutions for seats, cockpits, and door panels."
-      },
-      {
-        "title": "Commercial Vehicles",
-        "description": "Easy-care surfaces for heavy-duty use."
-      },
-      {
-        "title": "Yacht Interior",
-        "description": "Premium finishes for marine projects."
-      }
-    ]
-  },
-  "about": {
-    "title": "About Leder Stoffe",
-    "p1": "A specialized material distributor based in Zell am See, supplying high-quality synthetic leather solutions to converters and B2B partners across Europe.",
-    "p2": "Our portfolio focuses on durability, surface precision, and excellent processing quality.",
-    "p3": "With local inventory, we ensure fast lead times and maximum flexibility."
-  },
-  "contact": {
-    "title": "Request Information",
-    "intro": "Contact us for samples, price lists, or technical specifications.",
-    "shipping": "Europe-wide shipping",
-    "minOrder": "Available from 1 meter",
-    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"]
-  },
+      "items": [
+        {
+          "id": "black-matte",
+          "name": "Black Matte",
+          "series": "Black Series",
+          "shortDescription": "Elegant matte surface for premium vehicle interiors.",
+          "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
+        },
+        {
+          "id": "black-dynamic",
+          "name": "Black Dynamic",
+          "series": "Black Series",
+          "shortDescription": "Fine texture for precise cockpit area processing.",
+          "technicalHighlights": ["Thickness: 1.2 mm", "Martindale: 100k+", "Width: 140 cm"]
+        },
+        {
+          "id": "stone-matte",
+          "name": "Stone Matte",
+          "series": "Stone Series",
+          "shortDescription": "Neutral tone for contemporary design and durable upholstery.",
+          "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
+        }
+      ]
+    },
+    "applications": {
+      "title": "Applications",
+      "intro": "Our materials are used in:",
+      "items": [
+        {
+          "title": "Automotive Interiors",
+          "description": "Durable solutions for seats, cockpits, and door panels."
+        },
+        {
+          "title": "Commercial Vehicles",
+          "description": "Easy-care surfaces for heavy-duty use."
+        },
+        {
+          "title": "Yacht Interior",
+          "description": "Premium finishes for marine projects."
+        }
+      ]
+    },
+    "about": {
+      "title": "About Leder Stoffe",
+      "p1": "A specialized material distributor based in Zell am See, supplying high-quality synthetic leather solutions to converters and B2B partners across Europe.",
+      "p2": "Our portfolio focuses on durability, surface precision, and excellent processing quality.",
+      "p3": "With local inventory, we ensure fast lead times and maximum flexibility."
+    },
+    "contact": {
+      "title": "Request Information",
+      "intro": "Contact us for samples, price lists, or technical specifications.",
+      "phoneLabel": "Phone",
+      "phoneValue": "+49 1622752072",
+      "emailLabel": "Email",
+      "emailValue": "kunstleder5700@gmail.com",
+      "shipping": "Europe-wide shipping",
+      "minOrder": "Available from 1 meter",
+      "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"]
+    },
   "footer": {
     "positioning": "Austrian distributor for automotive and upholstery materials.",
     "rights": "All rights reserved."
