@@ -6,13 +6,14 @@
     "about": "Über uns",
     "contact": "Kontakt"
   },
-  "hero": {
-    "headline": "Premium Automotive Materialien",
-    "subheadline": "Synthetische Lederlösungen für professionelle Interieurs.",
-    "paragraph": "B2B-Partner für hochwertige PU- und PVC-Materialien ab Lager Österreich. Europaweite Lieferung in 2-4 Werktagen.",
-    "primaryCta": "Muster anfragen",
-    "secondaryCta": "Portfolio ansehen"
-  },
+    "hero": {
+      "headline": "Premium Automotive Materialien",
+      "subheadline": "Synthetische Lederlösungen für professionelle Interieurs.",
+      "paragraph": "B2B-Partner für hochwertige PU- und PVC-Materialien ab Lager Österreich. Europaweite Lieferung in 2-4 Werktagen.",
+      "heroAlt": "Premium-Automotive-Lederinterieur",
+      "primaryCta": "Muster anfragen",
+      "secondaryCta": "Portfolio ansehen"
+    },
   "trustBar": [
     "Lagerware in Österreich",
     "Europaweiter Versand",
