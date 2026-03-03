@@ -54,6 +54,10 @@ type Dictionary = {
   contact: {
     title: string;
     intro: string;
+    phoneLabel: string;
+    phoneValue: string;
+    emailLabel: string;
+    emailValue: string;
     shipping: string;
     minOrder: string;
     address: string[];
