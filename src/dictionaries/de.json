@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "home": "Start",
+    "materials": "Materialien",
+    "applications": "Anwendungen",
+    "about": "Über uns",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "headline": "Premium Automotive Materialien",
+    "subheadline": "Synthetische Lederlösungen für professionelle Interieurs.",
+    "paragraph": "B2B-Partner für hochwertige PU- und PVC-Materialien ab Lager Österreich. Europaweite Lieferung in 2-4 Werktagen.",
+    "primaryCta": "Muster anfragen",
+    "secondaryCta": "Portfolio ansehen"
+  },
+  "trustBar": [
+    "Lagerware in Österreich",
+    "Europaweiter Versand",
+    "Automotive B2B-Spezialist",
+    "Flexibel ab 1 Meter"
+  ],
+  "materials": {
+    "sectionTitle": "Kollektionen",
+    "sectionSubtitle": "Portfolio",
+    "placeholders": {
+      "image": "Produktbild",
+      "colors": "Farben",
+      "price": "Preis auf Anfrage",
+      "details": "Details & Muster"
+    },
+    "items": [
+      {
+        "id": "black-matte",
+        "name": "Black Matte",
+        "series": "Black Series",
+        "shortDescription": "Elegante matte Oberfläche für hochwertige Fahrzeuginterieurs.",
+        "technicalHighlights": ["Stärke: 1.1 mm", "Martindale: 80k+", "Breite: 140 cm"]
+      },
+      {
+        "id": "black-dynamic",
+        "name": "Black Dynamic",
+        "series": "Black Series",
+        "shortDescription": "Feine Struktur für präzise Verarbeitung im Cockpit-Bereich.",
+        "technicalHighlights": ["Stärke: 1.2 mm", "Martindale: 100k+", "Breite: 140 cm"]
+      },
+      {
+        "id": "stone-matte",
+        "name": "Stone Matte",
+        "series": "Stone Series",
+        "shortDescription": "Neutraler Farbton für modernes Design und langlebige Bezüge.",
+        "technicalHighlights": ["Stärke: 1.1 mm", "Martindale: 80k+", "Breite: 140 cm"]
+      }
+    ]
+  },
+  "applications": {
+    "title": "Einsatzbereiche",
+    "intro": "Unsere Materialien werden eingesetzt in:",
+    "items": [
+      {
+        "title": "Automotive Interieurs",
+        "description": "Strapazierfähige Lösungen für Sitze, Cockpits und Verkleidungen."
+      },
+      {
+        "title": "Nutzfahrzeuge",
+        "description": "Pflegeleichte Oberflächen für hohe Beanspruchung."
+      },
+      {
+        "title": "Yachtbau",
+        "description": "Premium-Ausstattungen für maritime Projekte."
+      }
+    ]
+  },
+  "about": {
+    "title": "Über Leder Stoffe",
+    "p1": "Als spezialisierter Materialdistributor in Zell am See liefern wir hochwertige synthetische Lederlösungen an Verarbeiter und B2B-Partner europaweit.",
+    "p2": "Unser Sortiment ist auf Langlebigkeit, Oberflächenpräzision und exzellente Verarbeitung ausgelegt.",
+    "p3": "Dank lokaler Lagerhaltung garantieren wir schnelle Lieferzeiten und hohe Flexibilität."
+  },
+  "contact": {
+    "title": "Information anfragen",
+    "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
+    "shipping": "Versand europaweit",
+    "minOrder": "Ab 1 Meter lieferbar"
+  },
+  "footer": {
+    "positioning": "Österreichischer Distributor für Automotive- und Polstermaterialien.",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "metadata": {
+    "distributor": "Material Distributor | Österreich"
+  }
+}
