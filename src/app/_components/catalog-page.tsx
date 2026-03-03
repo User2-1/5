@@ -42,8 +42,6 @@ type LocaleContent = {
     p1: string;
     p2: string;
     p3: string;
-    download: string;
-    chart: string;
     logistics: string;
     base: string;
   };
@@ -53,15 +51,6 @@ type LocaleContent = {
     items: string[];
     details: string;
     legal: string;
-  };
-  technical: {
-    title: string;
-    text: string;
-  };
-  principles: {
-    title: string;
-    intro: string;
-    items: { title: string; text: string }[];
   };
   conversion: {
     title: string;
