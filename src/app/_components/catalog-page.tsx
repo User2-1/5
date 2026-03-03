@@ -25,6 +25,7 @@ type Dictionary = {
     headline: string;
     subheadline: string;
     paragraph: string;
+    heroAlt: string;
     primaryCta: string;
     secondaryCta: string;
   };
