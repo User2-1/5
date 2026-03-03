@@ -492,7 +492,7 @@ const languages: { code: Lang; label: string }[] = [
 ];
 
 const companyAddress = ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"];
-const trustIcons = [Package, Truck, MapPin, ArrowRight, FileText] as const;
+const trustIcons = [Package, Truck, MapPin, ArrowRight] as const;
 
 export default function CatalogPage({ lang }: { lang: Lang }) {
   const content = contentByLang[lang];
