@@ -80,13 +80,15 @@
     "title": "Information anfragen",
     "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
     "shipping": "Versand europaweit",
-    "minOrder": "Ab 1 Meter lieferbar"
+    "minOrder": "Ab 1 Meter lieferbar",
+    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
   },
   "footer": {
     "positioning": "Österreichischer Distributor für Automotive- und Polstermaterialien.",
     "rights": "Alle Rechte vorbehalten."
   },
   "metadata": {
+    "brand": "Leder Stoffe",
     "distributor": "Material Distributor | Österreich"
   }
 }
