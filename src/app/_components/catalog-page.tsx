@@ -122,7 +122,7 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
         <div className="relative aspect-[16/9] min-h-[60vh] w-full md:min-h-[72vh]">
           <img
             src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=2400&q=80"
-            alt="Premium automotive leather interior"
+            alt={content.hero.heroAlt}
             className="h-full w-full object-cover [filter:saturate(0.85)_brightness(0.74)_contrast(1.08)_hue-rotate(8deg)]"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/20" aria-hidden="true" />
