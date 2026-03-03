@@ -15,10 +15,11 @@ export function generateStaticParams() {
   return LANGS.map((lang) => ({ lang }));
 }
 
-export default function LocalizedPage({ params }: LocalizedPageProps) {
-  if (!LANGS.includes(params.lang as Lang)) {
+export default async function LocalizedPage({ params }: LocalizedPageProps) {
+  const { lang } = await params;
+  if (!LANGS.includes(lang as Lang)) {
     notFound();
   }
 
-  return <CatalogPage lang={params.lang as Lang} />;
+  return <CatalogPage lang={lang as Lang} />;
 }
