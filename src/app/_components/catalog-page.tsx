@@ -1,7 +1,7 @@
 "use client";
 
 import NextLink from "next/link";
-import { ArrowRight, MapPin, Package, Truck } from "lucide-react";
+import { ArrowRight, Mail, MapPin, Package, Phone, Truck } from "lucide-react";
 
 export type Lang = "de" | "en" | "ru";
 
