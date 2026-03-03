@@ -35,6 +35,7 @@ export async function generateMetadata({ params }: Omit<LocalizedLayoutProps, "c
   return metadataByLang[lang as Lang];
 }
 
-export default function LocalizedLayout({ children }: LocalizedLayoutProps) {
+export default async function LocalizedLayout({ children, params }: LocalizedLayoutProps) {
+  await params;
   return children;
 }
