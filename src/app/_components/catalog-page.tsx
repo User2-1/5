@@ -585,12 +585,12 @@ export default function CatalogPage({ lang }: { lang: Lang }) {
             <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/70">
               {languages.map((item, index) => (
                 <span key={item.code} className="inline-flex items-center gap-2">
-                  <Link
+                  <NextLink
                     href={`/${item.code}`}
                     className={`transition ${item.code === lang ? "text-[#C8A774]" : "text-white/70 hover:text-white"}`}
                   >
                     {item.label}
-                  </Link>
+                  </NextLink>
                   {index < languages.length - 1 ? <span className="text-white/30">|</span> : null}
                 </span>
               ))}
