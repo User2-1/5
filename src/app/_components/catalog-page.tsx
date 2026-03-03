@@ -176,8 +176,6 @@ const contentByLang: Record<Lang, LocaleContent> = {
       p1: "Leder Stoffe ist ein spezialisierter Materialdistributor mit Sitz in Zell am See, Österreich, und beliefert Automotive-Innenraumspezialisten, Polsterbetriebe, Verarbeiter und Handelspartner in ganz Europa.",
       p2: "Das Portfolio umfasst ein breites Spektrum an PU- und PVC-basierten synthetischen Materialien in unterschiedlichen Oberflächenstrukturen, Farben und technischen Ausführungen - ausgewählt nach Haltbarkeit, Oberflächenkonsistenz und professioneller Verarbeitbarkeit.",
       p3: "Mit lagernder Ware und verlässlicher Logistik bietet Leder Stoffe flexible Bestellmengen ab 1 Meter sowie Lieferzeiten von 2-4 Werktagen innerhalb Europas.",
-      download: "PDF-Katalog herunterladen",
-      chart: "Farbübersicht ansehen",
       logistics: "Lagerware und schnelle Lieferung in ganz Europa.",
       base: "Standort Österreich, internationale Belieferung von Geschäftspartnern.",
     },
@@ -192,23 +190,6 @@ const contentByLang: Record<Lang, LocaleContent> = {
       ],
       details: "Detaillierte Spezifikationen, Farbvarianten und Muster sind auf Anfrage erhältlich.",
       legal: "Alcantara® ist eine eingetragene Marke der Alcantara S.p.A.",
-    },
-    technical: {
-      title: "Technische Einordnung",
-      text: "Die Materialien werden für professionelle Innenraumanwendungen ausgewählt. Vollständige technische Dokumentationen und Datenblätter sind auf Anfrage verfügbar.",
-    },
-    principles: {
-      title: "Auswahlkriterien",
-      intro: "Das Leder Stoffe Portfolio basiert auf vier zentralen Kriterien:",
-      items: [
-        { title: "Haltbarkeit", text: "Ausgewählt für den langfristigen Einsatz im Innenraum." },
-        { title: "Oberflächenpräzision", text: "Konstante Narbung und gleichmäßige Rollenqualität." },
-        {
-          title: "Verarbeitungskompatibilität",
-          text: "Geeignet für branchenübliche Schneid-, Klebe- und Nähprozesse.",
-        },
-        { title: "Professionelle Ästhetik", text: "Präzise Texturen und konsistente Farbwiedergabe." },
-      ],
     },
     conversion: {
       title: "Muster oder Preisinformationen anfragen",
