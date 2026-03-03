@@ -2,9 +2,9 @@ import { notFound } from "next/navigation";
 import CatalogPage, { type Lang } from "../_components/catalog-page";
 
 type LocalizedPageProps = {
-  params: {
+  params: Promise<{
     lang: string;
-  };
+  }>;
 };
 
 const LANGS: Lang[] = ["de", "en", "ru"];
