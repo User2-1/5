@@ -24,14 +24,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // lang="de" is the fallback; the [lang]/layout.tsx will ideally specify it,
+  // but we must have a base layout here as required by Next.js.
   return (
-    <html lang="de">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="de" className="scroll-smooth">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#111111]`}>
         <Script
           id="orchids-browser-logs"
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/scripts/orchids-browser-logs.js"
           strategy="afterInteractive"
-          data-orchids-project-id="b58e6d6b-67d5-48b8-91c7-45f31c1a7f90"
+          data-orchids-project-id="4b89fbfc-c79f-4ea4-b71b-afe3ef6278f1"
         />
         {children}
         <VisualEditsMessenger />
