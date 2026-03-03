@@ -51,42 +51,50 @@ export default async function ContactPage({ params }: LocalizedPageProps) {
         </div>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">
-          {/* Contact Details */}
-          <div className="space-y-6">
-            <div className="group rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition hover:border-[#C8A774]/50">
-              <div className="flex items-center gap-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C8A774]/10 text-[#C8A774]">
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-[#C8A774]/60">{content.contact.phoneLabel}</p>
-                  <a
-                    href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
-                    className="mt-1 block text-xl font-medium text-white transition hover:text-[#C8A774]"
-                  >
-                    {content.contact.phoneValue}
-                  </a>
+            {/* Contact Details */}
+            <div className="space-y-6">
+              <div className="group rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition hover:border-[#C8A774]/50">
+                <div className="flex items-start gap-5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C8A774]/10 text-[#C8A774]">
+                    <Phone size={24} />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-[#C8A774]/60">{content.contact.phoneLabel}</p>
+                    <div className="mt-2 space-y-2">
+                      <a
+                        href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
+                        className="block text-2xl font-medium text-white transition hover:text-[#C8A774]"
+                      >
+                        {content.contact.phoneValue}
+                      </a>
+                      <a
+                        href={`tel:${content.contact.phoneValue2.replace(/\s/g, "")}`}
+                        className="block text-2xl font-medium text-white transition hover:text-[#C8A774]"
+                      >
+                        {content.contact.phoneValue2}
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="group rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition hover:border-[#C8A774]/50">
-              <div className="flex items-center gap-5">
-                <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C8A774]/10 text-[#C8A774]">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <p className="text-xs uppercase tracking-widest text-[#C8A774]/60">{content.contact.emailLabel}</p>
-                  <a
-                    href={`mailto:${content.contact.emailValue}`}
-                    className="mt-1 block text-xl font-medium text-white transition hover:text-[#C8A774]"
-                  >
-                    {content.contact.emailValue}
-                  </a>
+              <div className="group rounded-3xl border border-white/10 bg-white/[0.02] p-8 transition hover:border-[#C8A774]/50">
+                <div className="flex items-center gap-5">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#C8A774]/10 text-[#C8A774]">
+                    <Mail size={24} />
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-widest text-[#C8A774]/60">{content.contact.emailLabel}</p>
+                    <a
+                      href={`mailto:${content.contact.emailValue}`}
+                      className="mt-2 block text-2xl font-medium text-white transition hover:text-[#C8A774]"
+                    >
+                      {content.contact.emailValue}
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
           {/* Address & Info */}
           <div className="space-y-6">
