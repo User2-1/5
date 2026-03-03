@@ -9,7 +9,7 @@
   "hero": {
     "headline": "Premium Automotive Materials",
     "subheadline": "Synthetic leather solutions for professional interiors.",
-    "paragraph": "B2B partner for high-quality PU and PVC materials stocked in Austria. Delivery across Europe in 2-4 business days.",
+    "paragraph": "B2B partner for high-quality PU and PDF materials stocked in Austria. Delivery across Europe in 2-4 business days.",
     "primaryCta": "Request Samples",
     "secondaryCta": "View Portfolio"
   },
@@ -80,13 +80,15 @@
     "title": "Request Information",
     "intro": "Contact us for samples, price lists, or technical specifications.",
     "shipping": "Europe-wide shipping",
-    "minOrder": "Available from 1 meter"
+    "minOrder": "Available from 1 meter",
+    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"]
   },
   "footer": {
     "positioning": "Austrian distributor for automotive and upholstery materials.",
     "rights": "All rights reserved."
   },
   "metadata": {
+    "brand": "Leder Stoffe",
     "distributor": "Material Distributor | Austria"
   }
 }
