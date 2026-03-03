@@ -170,46 +170,49 @@ export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictiona
         </div>
       </section>
 
-      <section id="materials" className="mx-auto max-w-7xl px-6 py-16">
-        <div className="mb-8">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#C8A774]">{content.materials.sectionSubtitle}</p>
-          <h2 className="mt-2 text-3xl font-semibold">{content.materials.sectionTitle}</h2>
+      <section id="materials" className="mx-auto max-w-7xl px-6 py-24">
+        <div className="mb-12">
+          <p className="text-xs uppercase tracking-[0.2em] text-[#C8A774] font-medium">{content.materials.sectionSubtitle}</p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{content.materials.sectionTitle}</h2>
         </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {content.materials.items.map((material) => (
-            <article key={material.id} className="rounded-2xl border border-white/10 bg-white/[0.02] p-4">
-              <div className="flex aspect-[16/10] items-center justify-center rounded-xl border border-dashed border-white/20 bg-black/30 text-xs uppercase tracking-[0.16em] text-white/45">
+            <article key={material.id} className="group rounded-3xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-white/20">
+              <div className="flex aspect-[16/10] items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/40 text-[10px] uppercase tracking-[0.2em] text-white/30 transition group-hover:bg-black/50">
                 {content.materials.placeholders.image}
               </div>
 
-              <div className="mt-4">
-                <p className="text-xs uppercase tracking-[0.18em] text-white/55">{material.series}</p>
-                <h3 className="mt-1 text-xl font-medium">{material.name}</h3>
-                <p className="mt-2 text-sm text-white/75">{material.shortDescription}</p>
+              <div className="mt-6">
+                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70 font-medium">{material.series}</p>
+                <h3 className="mt-1 text-2xl font-semibold tracking-tight text-white">{material.name}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-white/60">{material.shortDescription}</p>
               </div>
 
-              <ul className="mt-4 space-y-1.5 text-sm text-white/80">
+              <ul className="mt-6 space-y-2 text-sm text-white/70">
                 {material.technicalHighlights.slice(0, 3).map((highlight) => (
-                  <li key={highlight}>- {highlight}</li>
+                  <li key={highlight} className="flex items-center gap-2">
+                    <span className="h-1 w-1 rounded-full bg-[#C8A774]/40" />
+                    {highlight}
+                  </li>
                 ))}
               </ul>
 
-              <div className="mt-4 rounded-xl border border-white/10 bg-black/25 p-3">
-                <p className="text-[11px] uppercase tracking-[0.16em] text-white/45">{content.materials.placeholders.colors}</p>
-                <div className="mt-2 flex gap-2">
-                  <span className="h-5 w-5 rounded-full border border-white/20 bg-white/10" />
-                  <span className="h-5 w-5 rounded-full border border-white/20 bg-white/5" />
-                  <span className="h-5 w-5 rounded-full border border-white/20 bg-black/50" />
-                  <span className="h-5 w-5 rounded-full border border-white/20 bg-[#6a6a6a]" />
+              <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-4">
+                <p className="text-[9px] uppercase tracking-[0.2em] text-[#C8A774]/60 font-medium">{content.materials.placeholders.colors}</p>
+                <div className="mt-3 flex gap-2.5">
+                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#1a1a1a] shadow-inner" />
+                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#2d2d2d] shadow-inner" />
+                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#404040] shadow-inner" />
+                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#7a7a7a] shadow-inner" />
                 </div>
               </div>
 
-              <div className="mt-3 rounded-xl border border-white/10 bg-black/25 px-3 py-2 text-sm text-white/70">
+              <div className="mt-4 rounded-xl border border-white/5 bg-white/5 px-4 py-3 text-sm font-medium text-white/80">
                 {content.materials.placeholders.price}
               </div>
 
-              <button className="mt-4 w-full rounded-full border border-white/20 px-4 py-2 text-sm text-white/90 transition hover:border-white/45">
+              <button className="mt-5 w-full rounded-full border border-[#C8A774]/30 bg-[#C8A774]/5 px-4 py-2.5 text-sm font-medium text-[#C8A774] transition hover:bg-[#C8A774] hover:text-[#111111]">
                 {content.materials.placeholders.details}
               </button>
             </article>
