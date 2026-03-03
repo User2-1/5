@@ -313,8 +313,6 @@ const contentByLang: Record<Lang, LocaleContent> = {
       p1: "Leder Stoffe is a specialized material distributor based in Zell am See, Austria, supplying automotive interior specialists, upholsterers, converters, and trade partners across Europe.",
       p2: "The portfolio includes a wide range of PU and PVC based synthetic materials in various surface structures, colors, and technical configurations - selected for durability, surface consistency, and professional processing.",
       p3: "With stocked inventory and reliable logistics, Leder Stoffe offers flexible order quantities starting from 1 meter and delivery within 2-4 business days across Europe.",
-      download: "Download PDF Catalog",
-      chart: "View Color Chart Overview",
       logistics: "Stocked inventory and fast delivery across Europe.",
       base: "Based in Austria, serving trade partners internationally.",
     },
@@ -329,23 +327,6 @@ const contentByLang: Record<Lang, LocaleContent> = {
       ],
       details: "Detailed specifications, color variations, and samples are available upon request.",
       legal: "Alcantara® is a registered trademark of Alcantara S.p.A.",
-    },
-    technical: {
-      title: "Technical Performance",
-      text: "Materials are selected for professional interior applications. Full technical documentation and datasheets are available upon request.",
-    },
-    principles: {
-      title: "Selection Principles",
-      intro: "The Leder Stoffe portfolio is structured around four key criteria:",
-      items: [
-        { title: "Durability", text: "Selected for sustained interior use." },
-        { title: "Surface Precision", text: "Consistent grain structure and uniform roll quality." },
-        {
-          title: "Processing Compatibility",
-          text: "Suitable for industry-standard cutting, bonding, and sewing.",
-        },
-        { title: "Professional Aesthetics", text: "Refined textures and color consistency." },
-      ],
     },
     conversion: {
       title: "Request Samples or Pricing Information",
