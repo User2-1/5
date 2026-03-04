@@ -6,19 +6,19 @@
     "about": "Über uns",
     "contact": "Kontakt"
   },
-    "hero": {
-      "headline": "Premium Automotive Materialien",
-      "subheadline": "Synthetische Lederlösungen für professionelle Interieurs.",
-      "paragraph": "B2B-Partner für hochwertige PU- und PVC-Materialien ab Lager Österreich. Europaweite Lieferung in 2-4 Werktagen.",
-      "heroAlt": "Premium-Automotive-Lederinterieur",
-      "primaryCta": "Muster anfragen",
-      "secondaryCta": "Portfolio ansehen"
-    },
+  "hero": {
+    "headline": "Premium PU & PVC Automotive Materials",
+    "subheadline": "Synthetikleder für professionelle Interieurs – ab Lager Österreich, europaweite Lieferung.",
+    "paragraph": "Hochwertige Materialien für Hersteller, Fahrzeugumrüster und Interieur-Spezialisten.",
+    "heroAlt": "Premium-Automotive-Lederinterieur",
+    "primaryCta": "Muster anfragen",
+    "secondaryCta": "Portfolio ansehen"
+  },
   "trustBar": [
-    "Lagerware in Österreich",
-    "Europaweiter Versand",
+    "Lager in Österreich",
+    "Europaweite Lieferung",
     "Automotive B2B-Spezialist",
-    "Flexibel ab 1 Meter"
+    "Verfügbar ab 1 Meter"
   ],
   "materials": {
     "sectionTitle": "Kollektionen",
@@ -27,7 +27,7 @@
       "image": "Produktbild",
       "colors": "Farben",
       "price": "Preis auf Anfrage",
-      "details": "Details & Muster"
+      "details": "Details ansehen & Muster anfragen"
     },
     "items": [
       {
@@ -73,22 +73,22 @@
   },
   "about": {
     "title": "Über Leder Stoffe",
-    "p1": "Als spezialisierter Materialdistributor in Zell am See liefern wir hochwertige synthetische Lederlösungen an Verarbeiter und B2B-Partner europaweit.",
-    "p2": "Unser Sortiment ist auf Langlebigkeit, Oberflächenpräzision und exzellente Verarbeitung ausgelegt.",
-    "p3": "Dank lokaler Lagerhaltung garantieren wir schnelle Lieferzeiten und hohe Flexibilität."
+    "p1": "Wo Präzision auf hohe Standards trifft, entsteht Qualität.",
+    "p2": "Leder Stoffe steht für hochwertige Synthetikleder, die in professionellen Anwendungen zuverlässig überzeugen – durch Langlebigkeit, erstklassige Oberflächen und konstante Verarbeitungsqualität.",
+    "p3": "Als B2B-Partner beliefern wir Hersteller und Verarbeiter mit leistungsstarken PU- und PVC-Kollektionen."
   },
-    "contact": {
-      "title": "Information anfragen",
-      "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
-      "phoneLabel": "Telefon",
-      "phoneValue": "+49 1622752072",
-      "phoneValue2": "+43 6764725428",
-      "emailLabel": "E-Mail",
-      "emailValue": "kunstleder5700@gmail.com",
-      "shipping": "Versand europaweit",
-      "minOrder": "Ab 1 Meter lieferbar",
-      "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
-    },
+  "contact": {
+    "title": "Information anfragen",
+    "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
+    "phoneLabel": "Telefon",
+    "phoneValue": "+49 162 2752072",
+    "phoneValue2": "+43 676 4725428",
+    "emailLabel": "E-Mail",
+    "emailValue": "kunstleder5700@gmail.com",
+    "shipping": "Versand europaweit",
+    "minOrder": "Ab 1 Meter lieferbar",
+    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
+  },
   "footer": {
     "positioning": "Österreichischer Distributor für Automotive- und Polstermaterialien.",
     "rights": "Alle Rechte vorbehalten."
