@@ -13,29 +13,36 @@ const LANGS: Lang[] = ["de", "en", "ru"];
 
 const metadataByLang: Record<Lang, Metadata> = {
   de: {
-    title: "Leder Stoffe | Premium Automotive Materialien",
-    description: "Spezialisierter Distributor für hochwertige PU- und PVC-Materialien ab Lager Österreich. Europaweite Lieferung in 2-4 Werktagen.",
+    title: "Leder Stoffe | Europaeische Automotive-Interieur-Materialien",
+    description:
+      "Zuverlaessige PU- & PVC-Loesungen ab Lager Oesterreich mit europaweiter Lieferung.",
   },
   en: {
-    title: "Leder Stoffe | Premium Automotive Materials",
-    description: "Specialized distributor of high-quality PU and PVC materials based in Austria. Fast delivery across Europe.",
+    title: "Leder Stoffe | European Automotive Interior Materials",
+    description:
+      "Reliable PU & PVC solutions stocked in Austria and delivered across Europe.",
   },
   ru: {
-    title: "Leder Stoffe | Премиальные автомобильные материалы",
-    description: "Специализированный дистрибьютор высококачественных материалов PU и PVC со склада в Австрии. Доставка по всей Европе.",
+    title: "Leder Stoffe | Европейские материалы для автомобильных интерьеров",
+    description:
+      "Надёжные PU- и PVC-решения со склада в Австрии с доставкой по всей Европе.",
   },
 };
 
-export async function generateMetadata({ params }: Omit<LocalizedLayoutProps, "children">): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: Omit<LocalizedLayoutProps, "children">): Promise<Metadata> {
   const { lang } = await params;
   if (!LANGS.includes(lang as Lang)) {
     notFound();
   }
-
   return metadataByLang[lang as Lang];
 }
 
-export default async function LocalizedLayout({ children, params }: LocalizedLayoutProps) {
+export default async function LocalizedLayout({
+  children,
+  params,
+}: LocalizedLayoutProps) {
   await params;
   return children;
 }

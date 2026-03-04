@@ -1,100 +1,71 @@
 {
   "nav": {
     "home": "Start",
-    "materials": "Materialien",
-    "applications": "Anwendungen",
-    "about": "Über uns",
+    "portfolio": "Portfolio",
     "contact": "Kontakt"
   },
   "hero": {
-    "headline": "Premium PU & PVC Automotive Materials",
-    "subheadline": "Synthetikleder für professionelle Interieurs – ab Lager Österreich, europaweite Lieferung.",
-    "paragraph": "Hochwertige Materialien für Hersteller, Fahrzeugumrüster und Interieur-Spezialisten.",
-    "heroAlt": "Premium-Automotive-Lederinterieur",
-    "primaryCta": "Muster anfragen",
-    "secondaryCta": "Portfolio ansehen"
+    "headline": "Europaeische Automotive-Interieur-Materialien",
+    "subline": "Zuverlaessige PU- & PVC-Loesungen ab Lager Oesterreich mit europaweiter Lieferung.",
+    "ctaSamples": "Muster anfragen",
+    "ctaContact": "Kontakt aufnehmen",
+    "heroAlt": "Premium Automotive Lederinterieur"
   },
-  "trustBar": [
-    "Lager in Österreich",
-    "Europaweite Lieferung",
-    "Automotive B2B-Spezialist",
-    "Verfügbar ab 1 Meter"
-  ],
-  "materials": {
-    "sectionTitle": "Kollektionen",
-    "sectionSubtitle": "Portfolio",
-    "placeholders": {
-      "image": "Produktbild",
-      "colors": "Farben",
-      "price": "Preis auf Anfrage",
-      "details": "Details ansehen & Muster anfragen"
+  "positioning": {
+    "line1": "Europas Automobilindustrie mit konsistenten und effizienten Materialloesungen versorgen.",
+    "line2": "Ab Lager Oesterreich. Lieferung in die gesamte EU."
+  },
+  "strengths": [
+    {
+      "title": "Schnelle Verfuegbarkeit",
+      "description": "Ab Lager in Oesterreich"
     },
-    "items": [
-      {
-        "id": "black-matte",
-        "name": "Black Matte",
-        "series": "Black Series",
-        "shortDescription": "Elegante matte Oberfläche für hochwertige Fahrzeuginterieurs.",
-        "technicalHighlights": ["Stärke: 1.1 mm", "Martindale: 80k+", "Breite: 140 cm"]
-      },
-      {
-        "id": "black-dynamic",
-        "name": "Black Dynamic",
-        "series": "Black Series",
-        "shortDescription": "Feine Struktur für präzise Verarbeitung im Cockpit-Bereich.",
-        "technicalHighlights": ["Stärke: 1.2 mm", "Martindale: 100k+", "Breite: 140 cm"]
-      },
-      {
-        "id": "stone-matte",
-        "name": "Stone Matte",
-        "series": "Stone Series",
-        "shortDescription": "Neutraler Farbton für modernes Design und langlebige Bezüge.",
-        "technicalHighlights": ["Stärke: 1.1 mm", "Martindale: 80k+", "Breite: 140 cm"]
-      }
-    ]
+    {
+      "title": "Flexible Mengen",
+      "description": "Ab 1 Meter verfuegbar"
+    },
+    {
+      "title": "Zuverlaessige Lieferung",
+      "description": "Lieferung europaweit"
+    },
+    {
+      "title": "Direkter Kontakt",
+      "description": "Persoenlich und schnell erreichbar"
+    }
+  ],
+  "portfolio": {
+    "headline": "Umfangreiches PU- & PVC-Portfolio",
+    "description": "Eine breite Auswahl an Texturen, Oberflaechen und technischen Spezifikationen fuer Automotive-Interieurs und professionelle Anwendungen.",
+    "note": "Flammhemmende Optionen verfuegbar.",
+    "ctaSamples": "Muster anfragen"
   },
-  "applications": {
-    "title": "Einsatzbereiche",
-    "intro": "Unsere Materialien werden eingesetzt in:",
-    "items": [
-      {
-        "title": "Automotive Interieurs",
-        "description": "Strapazierfähige Lösungen für Sitze, Cockpits und Verkleidungen."
-      },
-      {
-        "title": "Nutzfahrzeuge",
-        "description": "Pflegeleichte Oberflächen für hohe Beanspruchung."
-      },
-      {
-        "title": "Yachtbau",
-        "description": "Premium-Ausstattungen für maritime Projekte."
-      }
-    ]
-  },
-  "about": {
-    "title": "Über Leder Stoffe",
-    "p1": "Wo Präzision auf hohe Standards trifft, entsteht Qualität.",
-    "p2": "Leder Stoffe steht für hochwertige Synthetikleder, die in professionellen Anwendungen zuverlässig überzeugen – durch Langlebigkeit, erstklassige Oberflächen und konstante Verarbeitungsqualität.",
-    "p3": "Als B2B-Partner beliefern wir Hersteller und Verarbeiter mit leistungsstarken PU- und PVC-Kollektionen."
-  },
-  "contact": {
-    "title": "Information anfragen",
-    "intro": "Kontaktieren Sie uns für Muster, Preislisten oder technische Spezifikationen.",
-    "phoneLabel": "Telefon",
-    "phoneValue": "+49 162 2752072",
-    "phoneValue2": "+43 676 4725428",
+  "cta": {
+    "headline": "Muster fuer Ihr naechstes Projekt anfragen",
+    "nameLabel": "Name",
+    "namePlaceholder": "Ihr Name",
+    "companyLabel": "Unternehmen",
+    "companyPlaceholder": "Firmenname",
     "emailLabel": "E-Mail",
-    "emailValue": "kunstleder5700@gmail.com",
-    "shipping": "Versand europaweit",
-    "minOrder": "Ab 1 Meter lieferbar",
-    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Österreich"]
+    "emailPlaceholder": "ihre@email.com",
+    "messageLabel": "Nachricht / Materialanfrage",
+    "messagePlaceholder": "Erzaehlen Sie uns von Ihrem Projekt oder den benoetigten Materialien...",
+    "submit": "Muster anfragen"
+  },
+  "europe": {
+    "line1": "Aktiv in Deutschland, Oesterreich und der Europaeischen Union.",
+    "line2": "Flexible Belieferung. Konstante Qualitaet. Effiziente Prozesse."
   },
   "footer": {
-    "positioning": "Österreichischer Distributor für Automotive- und Polstermaterialien.",
+    "company": "Leder Stoffe",
+    "address": ["Kitzsteinhornstrasse 63", "5700 Zell am See", "Oesterreich"],
+    "email": "kunstleder5700@gmail.com",
+    "phone": "+43 676 4725428",
+    "legalNotice": "Impressum",
+    "privacyPolicy": "Datenschutz",
     "rights": "Alle Rechte vorbehalten."
   },
   "metadata": {
     "brand": "Leder Stoffe",
-    "distributor": "Material Distributor | Österreich"
+    "tagline": "Europaeischer Partner fuer Automotive-Interieur-Materialien"
   }
 }

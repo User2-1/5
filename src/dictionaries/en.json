@@ -1,100 +1,71 @@
 {
   "nav": {
     "home": "Home",
-    "materials": "Materials",
-    "applications": "Applications",
-    "about": "About Us",
+    "portfolio": "Portfolio",
     "contact": "Contact"
   },
   "hero": {
-    "headline": "Premium PU & PVC Automotive Materials",
-    "subheadline": "Synthetic leather for professional interiors – stocked in Austria, delivered across Europe.",
-    "paragraph": "High-quality materials for manufacturers, vehicle converters, and interior specialists.",
-    "heroAlt": "Premium automotive leather interior",
-    "primaryCta": "Request Samples",
-    "secondaryCta": "View Portfolio"
+    "headline": "European Automotive Interior Materials",
+    "subline": "Reliable PU & PVC solutions stocked in Austria and delivered across Europe.",
+    "ctaSamples": "Request Samples",
+    "ctaContact": "Contact Us",
+    "heroAlt": "Premium automotive leather interior"
   },
-  "trustBar": [
-    "Stocked in Austria",
-    "Europe-wide delivery",
-    "Automotive B2B specialist",
-    "Available from 1 meter"
-  ],
-  "materials": {
-    "sectionTitle": "Collections",
-    "sectionSubtitle": "Portfolio",
-    "placeholders": {
-      "image": "Product image",
-      "colors": "Colors",
-      "price": "Price on request",
-      "details": "View Details & Request Samples"
+  "positioning": {
+    "line1": "Supplying Europe's automotive industry with consistent and efficient material solutions.",
+    "line2": "Stocked in Austria. Delivered across the EU."
+  },
+  "strengths": [
+    {
+      "title": "Fast Availability",
+      "description": "Stocked warehouse in Austria"
     },
-    "items": [
-      {
-        "id": "black-matte",
-        "name": "Black Matte",
-        "series": "Black Series",
-        "shortDescription": "Elegant matte surface for premium vehicle interiors.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
-      },
-      {
-        "id": "black-dynamic",
-        "name": "Black Dynamic",
-        "series": "Black Series",
-        "shortDescription": "Fine texture for precise cockpit area processing.",
-        "technicalHighlights": ["Thickness: 1.2 mm", "Martindale: 100k+", "Width: 140 cm"]
-      },
-      {
-        "id": "stone-matte",
-        "name": "Stone Matte",
-        "series": "Stone Series",
-        "shortDescription": "Neutral tone for contemporary design and durable upholstery.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
-      }
-    ]
+    {
+      "title": "Flexible Quantities",
+      "description": "Available from 1 meter"
+    },
+    {
+      "title": "Reliable Distribution",
+      "description": "Delivery across Europe"
+    },
+    {
+      "title": "Direct Communication",
+      "description": "Personal and responsive contact"
+    }
+  ],
+  "portfolio": {
+    "headline": "Extensive PU & PVC Portfolio",
+    "description": "A wide range of textures, surfaces and technical specifications suitable for automotive interiors and professional applications.",
+    "note": "Flame-retardant options available.",
+    "ctaSamples": "Request Samples"
   },
-  "applications": {
-    "title": "Applications",
-    "intro": "Our materials are used in:",
-    "items": [
-      {
-        "title": "Automotive Interiors",
-        "description": "Durable solutions for seats, cockpits, and door panels."
-      },
-      {
-        "title": "Commercial Vehicles",
-        "description": "Easy-care surfaces for heavy-duty use."
-      },
-      {
-        "title": "Yacht Interior",
-        "description": "Premium finishes for marine projects."
-      }
-    ]
-  },
-  "about": {
-    "title": "About Leder Stoffe",
-    "p1": "Where precision meets high standards, quality emerges.",
-    "p2": "Leder Stoffe stands for high-quality synthetic leather that performs reliably in professional applications, offering durability, clean surface finishes, and consistent workability.",
-    "p3": "As a B2B partner, we supply manufacturers and converters with high-performance PU and PVC collections."
-  },
-  "contact": {
-    "title": "Request Information",
-    "intro": "Contact us for samples, price lists, or technical specifications.",
-    "phoneLabel": "Phone",
-    "phoneValue": "+49 162 2752072",
-    "phoneValue2": "+43 676 4725428",
+  "cta": {
+    "headline": "Request Samples for Your Next Project",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Company name",
     "emailLabel": "Email",
-    "emailValue": "kunstleder5700@gmail.com",
-    "shipping": "Europe-wide shipping",
-    "minOrder": "Available from 1 meter",
-    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"]
+    "emailPlaceholder": "your@email.com",
+    "messageLabel": "Message / Material Request",
+    "messagePlaceholder": "Tell us about your project or the materials you need...",
+    "submit": "Request Samples"
+  },
+  "europe": {
+    "line1": "Operating across Germany, Austria and the European Union.",
+    "line2": "Flexible supply. Consistent quality. Efficient processes."
   },
   "footer": {
-    "positioning": "Austrian distributor for automotive and upholstery materials.",
+    "company": "Leder Stoffe",
+    "address": ["Kitzsteinhornstrasse 63", "5700 Zell am See", "Austria"],
+    "email": "kunstleder5700@gmail.com",
+    "phone": "+43 676 4725428",
+    "legalNotice": "Legal Notice",
+    "privacyPolicy": "Privacy Policy",
     "rights": "All rights reserved."
   },
   "metadata": {
     "brand": "Leder Stoffe",
-    "distributor": "Material Distributor | Austria"
+    "tagline": "European Partner for Automotive Interior Materials"
   }
 }
