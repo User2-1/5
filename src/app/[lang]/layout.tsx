@@ -13,19 +13,40 @@ const LANGS: Lang[] = ["de", "en", "ru"];
 
 const metadataByLang: Record<Lang, Metadata> = {
   de: {
-    title: "Leder Stoffe | Europaeische Automotive-Interieur-Materialien",
+    title: "Leder Stoffe | Europäische Automotive-Interieur-Materialien",
     description:
-      "Zuverlaessige PU- & PVC-Loesungen ab Lager Oesterreich mit europaweiter Lieferung.",
+      "Zuverlässige PU- & PVC-Lösungen ab Lager Österreich mit europaweiter Lieferung.",
+    alternates: {
+      languages: {
+        "de-AT": "/de",
+        en: "/en",
+        ru: "/ru",
+      },
+    },
   },
   en: {
     title: "Leder Stoffe | European Automotive Interior Materials",
     description:
       "Reliable PU & PVC solutions stocked in Austria and delivered across Europe.",
+    alternates: {
+      languages: {
+        "de-AT": "/de",
+        en: "/en",
+        ru: "/ru",
+      },
+    },
   },
   ru: {
     title: "Leder Stoffe | Европейские материалы для автомобильных интерьеров",
     description:
       "Надёжные PU- и PVC-решения со склада в Австрии с доставкой по всей Европе.",
+    alternates: {
+      languages: {
+        "de-AT": "/de",
+        en: "/en",
+        ru: "/ru",
+      },
+    },
   },
 };
 

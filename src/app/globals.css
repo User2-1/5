@@ -30,38 +30,37 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Old Money palette */
-  --color-navy: #1C1C1C;
-  --color-navy-deep: #0F1A26;
-  --color-navy-light: #1A2A38;
-  --color-forest: #1E2D24;
-  --color-forest-light: #2A3D30;
-  --color-bordeaux: #4A1E22;
-  --color-offwhite: #F4F1EB;
-  --color-warmgray: #E4E0D8;
-  --color-coolgray: #8A8A8A;
+  /* Dark luxury palette */
+  --color-base: #0B0D10;
+  --color-surface: #111418;
+  --color-card-bg: #14181D;
+  --color-divider: #1E242C;
+  --color-text-primary: #E8E6E3;
+  --color-text-secondary: #A7A7A7;
+  --color-gold: #C6A86B;
+  --color-gold-hover: #D4B87A;
 }
 
 :root {
-  --radius: 0.5rem;
-  --background: #F4F1EB;
-  --foreground: #1C1C1C;
-  --card: #FFFFFF;
-  --card-foreground: #1C1C1C;
-  --popover: #FFFFFF;
-  --popover-foreground: #1C1C1C;
-  --primary: #1E2D24;
-  --primary-foreground: #F4F1EB;
-  --secondary: #E4E0D8;
-  --secondary-foreground: #1C1C1C;
-  --muted: #E4E0D8;
-  --muted-foreground: #5A5A5A;
-  --accent: #1E2D24;
-  --accent-foreground: #F4F1EB;
-  --destructive: #4A1E22;
-  --border: #D4D0C8;
-  --input: #D4D0C8;
-  --ring: #1E2D24;
+  --radius: 0.375rem;
+  --background: #0B0D10;
+  --foreground: #E8E6E3;
+  --card: #14181D;
+  --card-foreground: #E8E6E3;
+  --popover: #14181D;
+  --popover-foreground: #E8E6E3;
+  --primary: #C6A86B;
+  --primary-foreground: #0B0D10;
+  --secondary: #111418;
+  --secondary-foreground: #E8E6E3;
+  --muted: #1E242C;
+  --muted-foreground: #A7A7A7;
+  --accent: #C6A86B;
+  --accent-foreground: #0B0D10;
+  --destructive: #8B2020;
+  --border: #1E242C;
+  --input: #1E242C;
+  --ring: #C6A86B;
 }
 
 @layer base {
@@ -76,11 +75,11 @@
 /* Slow zoom animation for hero background */
 @keyframes slowZoom {
   0%   { transform: scale(1); }
-  100% { transform: scale(1.08); }
+  100% { transform: scale(1.06); }
 }
 
 .animate-slow-zoom {
-  animation: slowZoom 20s ease-in-out infinite alternate;
+  animation: slowZoom 25s ease-in-out infinite alternate;
 }
 
 /* Hide Next.js error overlay portal */

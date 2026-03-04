@@ -1,7 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "portfolio": "Portfolio",
+    "materials": "Materials",
+    "applications": "Applications",
+    "about": "About Us",
     "contact": "Contact"
   },
   "hero": {
@@ -11,46 +13,59 @@
     "ctaContact": "Contact Us",
     "heroAlt": "Premium automotive leather interior"
   },
-  "trustBar": {
-    "warehouseTitle": "Warehouse Location",
-    "warehouseValue": "Austria",
-    "leadTimeTitle": "Lead Times",
-    "leadTimeValue": "2\u20134 Business Days (EU)",
-    "minimumTitle": "Minimum Order",
-    "minimumValue": "From 1 Meter"
+  "trustBar": [
+    { "title": "Stocked in Austria", "text": "Warehouse in Zell am See" },
+    { "title": "Europe-Wide Shipping", "text": "Delivery across the EU" },
+    { "title": "Automotive B2B Specialist", "text": "Professional-grade materials" },
+    { "title": "Flexible from 1 Meter", "text": "No large minimum orders" }
+  ],
+  "portfolio": {
+    "label": "PORTFOLIO",
+    "headline": "Collections",
+    "collections": [
+      {
+        "series": "BLACK SERIES",
+        "title": "Synthetic Leather Black",
+        "description": "Versatile black surfaces for seats, door panels and trim applications.",
+        "specs": ["PU & PVC options", "Matte and satin finishes", "Fine grain & smooth"]
+      },
+      {
+        "series": "BEIGE & SAND",
+        "title": "Synthetic Leather Beige",
+        "description": "Warm toned surfaces for premium interior applications.",
+        "specs": ["Satin & matte finishes", "Perforated options", "Natural grain emboss"]
+      },
+      {
+        "series": "GREY COLLECTION",
+        "title": "Synthetic Leather Grey",
+        "description": "Neutral tones from silver to anthracite for modern interiors.",
+        "specs": ["Cool and warm tones", "Structured textures", "Micro grain patterns"]
+      },
+      {
+        "series": "COGNAC & BROWN",
+        "title": "Synthetic Leather Brown",
+        "description": "Rich amber and walnut tones for distinguished interiors.",
+        "specs": ["Deep grain character", "Multiple brown shades", "Satin finishes"]
+      }
+    ]
   },
   "about": {
     "headline": "About Us",
     "p1": "As a specialized material distributor based in Zell am See, we supply high-quality synthetic leather solutions to processors and B2B partners across Europe.",
-    "p2": "Our portfolio is engineered for durability, surface precision, and superior processability \u2014 developed for professional automotive and interior applications.",
+    "p2": "Our portfolio is engineered for durability, surface precision, and superior processability — developed for professional automotive and interior applications.",
     "p3": "With local warehousing in Austria, we ensure short lead times, high availability, and maximum flexibility in order quantities."
   },
-  "strengths": [
-    {
-      "title": "Fast Availability",
-      "description": "Stocked warehouse in Austria"
-    },
-    {
-      "title": "Flexible Quantities",
-      "description": "Available from 1 meter"
-    },
-    {
-      "title": "Reliable Distribution",
-      "description": "Delivery across Europe"
-    },
-    {
-      "title": "Direct Communication",
-      "description": "Personal and responsive contact"
-    }
-  ],
-  "portfolio": {
-    "headline": "Extensive PU & PVC Portfolio",
-    "description": "A wide range of textures, surfaces and technical specifications suitable for automotive interiors and professional applications.",
-    "note": "Flame-retardant options available.",
-    "ctaSamples": "Request Samples"
+  "strengths": {
+    "items": [
+      "Consistent Quality",
+      "Reliable Supply",
+      "Fast European Distribution",
+      "Direct Communication"
+    ]
   },
   "footer": {
     "company": "Leder Stoffe",
+    "tagline": "MATERIAL DISTRIBUTOR | AUSTRIA",
     "address": ["Kitzsteinhornstrasse 63", "5700 Zell am See", "Austria"],
     "email": "kunstleder5700@gmail.com",
     "phone": "+43 676 4725428",
@@ -58,9 +73,5 @@
     "privacyPolicy": "Privacy Policy",
     "rights": "All rights reserved.",
     "requestSamples": "Request Samples"
-  },
-  "metadata": {
-    "brand": "Leder Stoffe",
-    "tagline": "European Partner for Automotive Interior Materials"
   }
 }

@@ -3,18 +3,25 @@
 import NextLink from "next/link";
 import Image from "next/image";
 import { useState } from "react";
-import {
-  Mail,
-  Phone,
-  MapPin,
-  Menu,
-  X,
-} from "lucide-react";
+import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 
 export type Lang = "de" | "en" | "ru";
 
+type Collection = {
+  series: string;
+  title: string;
+  description: string;
+  specs: string[];
+};
+
 type Dictionary = {
-  nav: { home: string; portfolio: string; contact: string };
+  nav: {
+    home: string;
+    materials: string;
+    applications: string;
+    about: string;
+    contact: string;
+  };
   hero: {
     headline: string;
     subline: string;
@@ -22,13 +29,11 @@ type Dictionary = {
     ctaContact: string;
     heroAlt: string;
   };
-  trustBar: {
-    warehouseTitle: string;
-    warehouseValue: string;
-    leadTimeTitle: string;
-    leadTimeValue: string;
-    minimumTitle: string;
-    minimumValue: string;
+  trustBar: { title: string; text: string }[];
+  portfolio: {
+    label: string;
+    headline: string;
+    collections: Collection[];
   };
   about: {
     headline: string;
@@ -36,15 +41,12 @@ type Dictionary = {
     p2: string;
     p3: string;
   };
-  strengths: { title: string; description: string }[];
-  portfolio: {
-    headline: string;
-    description: string;
-    note: string;
-    ctaSamples: string;
+  strengths: {
+    items: string[];
   };
   footer: {
     company: string;
+    tagline: string;
     address: string[];
     email: string;
     phone: string;
@@ -53,7 +55,6 @@ type Dictionary = {
     rights: string;
     requestSamples: string;
   };
-  metadata: { brand: string; tagline: string };
 };
 
 const languages: { code: Lang; label: string }[] = [
@@ -62,72 +63,79 @@ const languages: { code: Lang; label: string }[] = [
   { code: "ru", label: "RU" },
 ];
 
-const portfolioImages = [
+const collectionImages = [
   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fit=crop",
-  "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=85&fit=crop",
   "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=85&fit=crop",
   "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=85&fit=crop",
 ];
 
-/* ────────────────────── Navigation ────────────────────── */
+/* ─── Navigation ─── */
 
 function Navigation({ lang, content }: { lang: Lang; content: Dictionary }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 bg-navy-deep/95 backdrop-blur-sm">
+    <header className="sticky top-0 z-40 border-b border-divider bg-base/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        {/* Logo */}
         <div>
-          <p className="text-lg font-semibold tracking-tight text-offwhite font-sans">
-            {content.metadata.brand}
+          <p className="text-lg font-semibold tracking-tight text-text-primary">
+            {content.footer.company}
           </p>
-          <p className="text-[10px] uppercase tracking-[0.25em] text-coolgray font-sans">
-            {content.metadata.tagline}
+          <p className="text-[10px] uppercase tracking-[0.25em] text-gold">
+            {content.footer.tagline}
           </p>
         </div>
 
-        {/* Desktop nav + lang switcher */}
-        <div className="hidden items-center gap-8 md:flex">
-          <nav className="flex items-center gap-6 text-sm text-offwhite/70 font-sans">
-            <a href="#home" className="transition hover:text-offwhite">
+        {/* Desktop nav */}
+        <div className="hidden items-center gap-8 lg:flex">
+          <nav className="flex items-center gap-6 text-[13px] text-text-secondary">
+            <a href="#home" className="transition hover:text-text-primary">
               {content.nav.home}
             </a>
-            <a href="#portfolio" className="transition hover:text-offwhite">
-              {content.nav.portfolio}
+            <a href="#portfolio" className="transition hover:text-text-primary">
+              {content.nav.materials}
+            </a>
+            <a href="#portfolio" className="transition hover:text-text-primary">
+              {content.nav.applications}
+            </a>
+            <a href="#about" className="transition hover:text-text-primary">
+              {content.nav.about}
             </a>
             <NextLink
               href={`/${lang}/contact`}
-              className="transition hover:text-offwhite"
+              className="transition hover:text-text-primary"
             >
               {content.nav.contact}
             </NextLink>
           </nav>
 
           {/* Language switcher */}
-          <div className="flex items-center gap-1 text-[11px] uppercase tracking-[0.15em] font-sans">
+          <div className="flex items-center gap-1 text-[11px] uppercase tracking-[0.15em]">
             {languages.map((item, index) => (
               <span key={item.code} className="inline-flex items-center gap-1">
                 <NextLink
                   href={`/${item.code}`}
                   className={`px-1 py-0.5 transition ${
                     item.code === lang
-                      ? "text-forest-light underline underline-offset-4 decoration-forest-light"
-                      : "text-offwhite/40 hover:text-offwhite/70"
+                      ? "text-gold"
+                      : "text-text-secondary/50 hover:text-gold"
                   }`}
                 >
                   {item.label}
                 </NextLink>
                 {index < languages.length - 1 && (
-                  <span className="text-offwhite/20">|</span>
+                  <span className="text-text-secondary/20">|</span>
                 )}
               </span>
             ))}
           </div>
         </div>
 
-        {/* Mobile menu toggle */}
+        {/* Mobile toggle */}
         <button
-          className="flex items-center justify-center md:hidden text-offwhite"
+          className="flex items-center justify-center lg:hidden text-text-primary"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
@@ -137,45 +145,39 @@ function Navigation({ lang, content }: { lang: Lang; content: Dictionary }) {
 
       {/* Mobile nav */}
       {menuOpen && (
-        <div className="border-t border-offwhite/5 bg-navy-deep px-6 py-4 md:hidden">
-          <nav className="flex flex-col gap-4 text-sm text-offwhite/70 font-sans">
-            <a
-              href="#home"
-              className="transition hover:text-offwhite"
-              onClick={() => setMenuOpen(false)}
-            >
+        <div className="border-t border-divider bg-base px-6 py-4 lg:hidden">
+          <nav className="flex flex-col gap-4 text-[13px] text-text-secondary">
+            <a href="#home" className="transition hover:text-text-primary" onClick={() => setMenuOpen(false)}>
               {content.nav.home}
             </a>
-            <a
-              href="#portfolio"
-              className="transition hover:text-offwhite"
-              onClick={() => setMenuOpen(false)}
-            >
-              {content.nav.portfolio}
+            <a href="#portfolio" className="transition hover:text-text-primary" onClick={() => setMenuOpen(false)}>
+              {content.nav.materials}
             </a>
-            <NextLink
-              href={`/${lang}/contact`}
-              className="transition hover:text-offwhite"
-              onClick={() => setMenuOpen(false)}
-            >
+            <a href="#portfolio" className="transition hover:text-text-primary" onClick={() => setMenuOpen(false)}>
+              {content.nav.applications}
+            </a>
+            <a href="#about" className="transition hover:text-text-primary" onClick={() => setMenuOpen(false)}>
+              {content.nav.about}
+            </a>
+            <NextLink href={`/${lang}/contact`} className="transition hover:text-text-primary" onClick={() => setMenuOpen(false)}>
               {content.nav.contact}
             </NextLink>
           </nav>
-          <div className="mt-4 flex items-center gap-1 text-[11px] uppercase tracking-[0.15em] font-sans">
+          <div className="mt-4 flex items-center gap-1 text-[11px] uppercase tracking-[0.15em]">
             {languages.map((item, index) => (
               <span key={item.code} className="inline-flex items-center gap-1">
                 <NextLink
                   href={`/${item.code}`}
                   className={`px-1 py-0.5 transition ${
                     item.code === lang
-                      ? "text-forest-light underline underline-offset-4 decoration-forest-light"
-                      : "text-offwhite/40 hover:text-offwhite/70"
+                      ? "text-gold"
+                      : "text-text-secondary/50 hover:text-gold"
                   }`}
                 >
                   {item.label}
                 </NextLink>
                 {index < languages.length - 1 && (
-                  <span className="text-offwhite/20">|</span>
+                  <span className="text-text-secondary/20">|</span>
                 )}
               </span>
             ))}
@@ -186,43 +188,40 @@ function Navigation({ lang, content }: { lang: Lang; content: Dictionary }) {
   );
 }
 
-/* ────────────────────── Hero Section ────────────────────── */
+/* ─── Hero ─── */
 
 function HeroSection({ lang, content }: { lang: Lang; content: Dictionary }) {
   return (
-    <section id="home" className="relative overflow-hidden bg-navy-deep">
+    <section id="home" className="relative overflow-hidden bg-base">
       <div className="relative min-h-[70vh] w-full md:min-h-[80vh]">
         <Image
           src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=2400&q=80"
           alt={content.hero.heroAlt}
           fill
-          className="object-cover animate-slow-zoom [filter:saturate(0.6)_brightness(0.3)_contrast(1.1)]"
+          className="object-cover animate-slow-zoom [filter:saturate(0.4)_brightness(0.2)_contrast(1.1)]"
           priority
         />
-        <div
-          className="absolute inset-0 bg-navy-deep/50"
-          aria-hidden="true"
-        />
+        <div className="absolute inset-0 bg-base/60" aria-hidden="true" />
 
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-6xl px-6">
             <div className="max-w-2xl">
-              <h1 className="text-4xl font-bold leading-tight text-offwhite md:text-6xl text-balance font-serif">
+              <h1 className="text-4xl font-bold leading-tight text-text-primary md:text-6xl text-balance font-serif">
                 {content.hero.headline}
               </h1>
-              <p className="mt-6 text-lg leading-relaxed text-offwhite/65 md:text-xl font-sans">
+              <p className="mt-6 text-lg leading-relaxed text-text-secondary md:text-xl">
                 {content.hero.subline}
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <NextLink
                   href={`/${lang}/contact`}
-                  className="inline-flex items-center rounded-sm px-7 py-3.5 text-sm font-medium bg-forest text-offwhite transition hover:bg-forest-light font-sans"
+                  className="inline-flex items-center rounded-md px-7 py-3.5 text-sm font-medium bg-gold text-base transition hover:bg-gold-hover"
                 >
                   {content.hero.ctaSamples}
                 </NextLink>
                 <a
-                  href="#footer-contact"
-                  className="inline-flex items-center rounded-sm border border-offwhite/20 px-7 py-3.5 text-sm font-medium text-offwhite/80 transition hover:border-offwhite/40 hover:text-offwhite font-sans"
+                  href="#footer"
+                  className="inline-flex items-center rounded-md border border-gold/40 px-7 py-3.5 text-sm font-medium text-gold transition hover:border-gold hover:text-gold-hover"
                 >
                   {content.hero.ctaContact}
                 </a>
@@ -235,34 +234,27 @@ function HeroSection({ lang, content }: { lang: Lang; content: Dictionary }) {
   );
 }
 
-/* ────────────────────── Trust Bar ────────────────────── */
+/* ─── Trust Bar ─── */
 
 function TrustBar({ content }: { content: Dictionary }) {
-  const items = [
-    { title: content.trustBar.warehouseTitle, value: content.trustBar.warehouseValue },
-    { title: content.trustBar.leadTimeTitle, value: content.trustBar.leadTimeValue },
-    { title: content.trustBar.minimumTitle, value: content.trustBar.minimumValue },
-  ];
-
   return (
-    <section className="border-b border-warmgray bg-offwhite">
-      <div className="mx-auto flex max-w-4xl flex-col items-center justify-center px-6 py-10 sm:flex-row">
-        {items.map((item, index) => (
-          <div key={item.title} className="flex items-center">
-            <div className="px-8 py-3 text-center">
-              <p className="text-xs font-light uppercase tracking-[0.2em] text-navy/50 font-serif">
-                {item.title}
-              </p>
-              <p className="mt-1.5 text-sm font-medium text-navy font-sans">
-                {item.value}
-              </p>
-            </div>
-            {index < items.length - 1 && (
-              <div className="hidden h-10 w-px bg-warmgray sm:block" aria-hidden="true" />
-            )}
-            {index < items.length - 1 && (
-              <div className="block h-px w-16 bg-warmgray sm:hidden" aria-hidden="true" />
-            )}
+    <section className="border-b border-divider bg-surface">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-6">
+        {content.trustBar.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-col items-center px-6 py-8 text-center ${
+              index < content.trustBar.length - 1
+                ? "border-b sm:border-b-0 sm:border-r border-divider"
+                : ""
+            }`}
+          >
+            <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+              {item.title}
+            </p>
+            <p className="mt-1.5 text-sm text-text-secondary">
+              {item.text}
+            </p>
           </div>
         ))}
       </div>
@@ -270,16 +262,76 @@ function TrustBar({ content }: { content: Dictionary }) {
   );
 }
 
-/* ────────────────────── About Us Section ────────────────────── */
+/* ─── Portfolio ─── */
+
+function PortfolioSection({ content }: { content: Dictionary }) {
+  return (
+    <section id="portfolio" className="bg-base py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-12">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
+            {content.portfolio.label}
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-text-primary md:text-4xl font-serif">
+            {content.portfolio.headline}
+          </h2>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          {content.portfolio.collections.map((col, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-md border border-divider bg-card-bg"
+            >
+              {/* Image */}
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src={collectionImages[index % collectionImages.length]}
+                  alt={col.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-[1.03] [filter:saturate(0.5)_brightness(0.6)]"
+                />
+                <div className="absolute inset-0 bg-base/30" />
+              </div>
+
+              {/* Content */}
+              <div className="p-6">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-gold">
+                  {col.series}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-text-primary">
+                  {col.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                  {col.description}
+                </p>
+                <ul className="mt-4 flex flex-col gap-1.5">
+                  {col.specs.map((spec, si) => (
+                    <li key={si} className="flex items-center gap-2 text-[13px] text-text-secondary">
+                      <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-gold" />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── About Us ─── */
 
 function AboutSection({ content }: { content: Dictionary }) {
   return (
-    <section className="bg-offwhite py-20 md:py-28">
+    <section id="about" className="bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-2xl px-6">
-        <h2 className="text-3xl font-bold text-navy md:text-4xl font-serif text-center">
+        <h2 className="text-3xl font-bold text-text-primary md:text-4xl font-serif text-center">
           {content.about.headline}
         </h2>
-        <div className="mt-10 flex flex-col gap-5 text-base leading-relaxed text-navy/70 font-sans">
+        <div className="mt-10 flex flex-col gap-5 text-base leading-relaxed text-text-secondary">
           <p>{content.about.p1}</p>
           <p>{content.about.p2}</p>
           <p>{content.about.p3}</p>
@@ -289,71 +341,17 @@ function AboutSection({ content }: { content: Dictionary }) {
   );
 }
 
-/* ────────────────────── Portfolio Section ────────────────────── */
-
-function PortfolioSection({ lang, content }: { lang: Lang; content: Dictionary }) {
-  return (
-    <section id="portfolio" className="bg-navy-deep py-20 md:py-28">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="mb-12 max-w-2xl">
-          <h2 className="text-3xl font-bold text-offwhite md:text-4xl text-balance font-serif">
-            {content.portfolio.headline}
-          </h2>
-          <p className="mt-4 text-base leading-relaxed text-offwhite/60 font-sans">
-            {content.portfolio.description}
-          </p>
-          <p className="mt-3 text-sm text-offwhite/40 font-sans">
-            {content.portfolio.note}
-          </p>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {portfolioImages.map((src, index) => (
-            <div
-              key={index}
-              className="group relative aspect-[4/3] overflow-hidden rounded-sm"
-            >
-              <Image
-                src={src}
-                alt={`Material texture sample ${index + 1}`}
-                fill
-                className="object-cover transition duration-500 group-hover:scale-105 [filter:saturate(0.7)_brightness(0.8)]"
-              />
-              <div className="absolute inset-0 bg-navy-deep/20 transition group-hover:bg-navy-deep/10" />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-10 text-center">
-          <NextLink
-            href={`/${lang}/contact`}
-            className="inline-flex items-center rounded-sm px-7 py-3.5 text-sm font-medium bg-forest text-offwhite transition hover:bg-forest-light font-sans"
-          >
-            {content.portfolio.ctaSamples}
-          </NextLink>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ────────────────────── Core Strengths Section ────────────────────── */
+/* ─── Core Strengths ─── */
 
 function StrengthsSection({ content }: { content: Dictionary }) {
   return (
-    <section className="bg-offwhite py-16 md:py-24">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {content.strengths.map((item) => (
-            <div
-              key={item.title}
-              className="flex flex-col items-center px-4 py-6 text-center"
-            >
-              <h3 className="text-xs font-medium uppercase tracking-[0.15em] text-navy font-sans">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-sm text-navy/50 font-sans">
-                {item.description}
+    <section className="border-t border-b border-divider bg-base py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          {content.strengths.items.map((item) => (
+            <div key={item} className="text-center">
+              <p className="text-sm font-medium text-text-primary">
+                {item}
               </p>
             </div>
           ))}
@@ -363,27 +361,27 @@ function StrengthsSection({ content }: { content: Dictionary }) {
   );
 }
 
-/* ────────────────────── Footer ────────────────────── */
+/* ─── Footer ─── */
 
 function SiteFooter({ lang, content }: { lang: Lang; content: Dictionary }) {
   return (
-    <footer id="footer-contact" className="bg-navy-deep">
+    <footer id="footer" className="bg-surface">
       <div className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company */}
           <div>
-            <p className="text-base font-semibold text-offwhite font-sans">
+            <p className="text-base font-semibold text-text-primary">
               {content.footer.company}
             </p>
-            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-coolgray font-sans">
-              {content.metadata.tagline}
+            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-gold">
+              {content.footer.tagline}
             </p>
           </div>
 
           {/* Address */}
           <div className="flex items-start gap-3">
-            <MapPin size={15} className="mt-0.5 shrink-0 text-forest-light" />
-            <div className="text-sm leading-relaxed text-offwhite/60 font-sans">
+            <MapPin size={15} className="mt-0.5 shrink-0 text-gold/60" />
+            <div className="text-sm leading-relaxed text-text-secondary">
               {content.footer.address.map((line) => (
                 <p key={line}>{line}</p>
               ))}
@@ -393,19 +391,19 @@ function SiteFooter({ lang, content }: { lang: Lang; content: Dictionary }) {
           {/* Contact */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-3">
-              <Mail size={15} className="shrink-0 text-forest-light" />
+              <Mail size={15} className="shrink-0 text-gold/60" />
               <a
                 href={`mailto:${content.footer.email}`}
-                className="text-sm text-offwhite/60 transition hover:text-offwhite font-sans"
+                className="text-sm text-text-secondary transition hover:text-text-primary"
               >
                 {content.footer.email}
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <Phone size={15} className="shrink-0 text-forest-light" />
+              <Phone size={15} className="shrink-0 text-gold/60" />
               <a
                 href={`tel:${content.footer.phone.replace(/\s/g, "")}`}
-                className="text-sm text-offwhite/60 transition hover:text-offwhite font-sans"
+                className="text-sm text-text-secondary transition hover:text-text-primary"
               >
                 {content.footer.phone}
               </a>
@@ -413,18 +411,18 @@ function SiteFooter({ lang, content }: { lang: Lang; content: Dictionary }) {
           </div>
 
           {/* Legal */}
-          <div className="flex flex-col gap-2 text-sm text-offwhite/40 font-sans">
-            <a href="#" className="transition hover:text-offwhite/70">
+          <div className="flex flex-col gap-2 text-sm text-text-secondary/60">
+            <a href="#" className="transition hover:text-text-secondary">
               {content.footer.legalNotice}
             </a>
-            <a href="#" className="transition hover:text-offwhite/70">
+            <a href="#" className="transition hover:text-text-secondary">
               {content.footer.privacyPolicy}
             </a>
           </div>
         </div>
 
-        <div className="mt-10 border-t border-offwhite/5 pt-6">
-          <div className="flex flex-col items-center justify-between gap-3 text-xs text-offwhite/30 sm:flex-row font-sans">
+        <div className="mt-10 border-t border-divider pt-6">
+          <div className="flex flex-col items-center justify-between gap-3 text-xs text-text-secondary/40 sm:flex-row">
             <p>
               {"© "}
               {new Date().getFullYear()} {content.footer.company}.{" "}
@@ -432,7 +430,7 @@ function SiteFooter({ lang, content }: { lang: Lang; content: Dictionary }) {
             </p>
             <NextLink
               href={`/${lang}/contact`}
-              className="text-xs text-offwhite/40 transition hover:text-offwhite/70 font-sans"
+              className="text-xs text-text-secondary/40 transition hover:text-gold"
             >
               {content.footer.requestSamples}
             </NextLink>
@@ -443,7 +441,7 @@ function SiteFooter({ lang, content }: { lang: Lang; content: Dictionary }) {
   );
 }
 
-/* ────────────────────── Main Page ────────────────────── */
+/* ─── Main Page ─── */
 
 export default function CatalogPage({
   lang,
@@ -453,12 +451,12 @@ export default function CatalogPage({
   dictionary: Dictionary;
 }) {
   return (
-    <main className="min-h-screen bg-offwhite text-navy font-sans">
+    <main className="min-h-screen bg-base text-text-primary">
       <Navigation lang={lang} content={dictionary} />
       <HeroSection lang={lang} content={dictionary} />
       <TrustBar content={dictionary} />
+      <PortfolioSection content={dictionary} />
       <AboutSection content={dictionary} />
-      <PortfolioSection lang={lang} content={dictionary} />
       <StrengthsSection content={dictionary} />
       <SiteFooter lang={lang} content={dictionary} />
     </main>
