@@ -11,9 +11,19 @@
     "ctaContact": "Contact Us",
     "heroAlt": "Premium automotive leather interior"
   },
-  "positioning": {
-    "line1": "Supplying Europe's automotive industry with consistent and efficient material solutions.",
-    "line2": "Stocked in Austria. Delivered across the EU."
+  "trustBar": {
+    "warehouseTitle": "Warehouse Location",
+    "warehouseValue": "Austria",
+    "leadTimeTitle": "Lead Times",
+    "leadTimeValue": "2\u20134 Business Days (EU)",
+    "minimumTitle": "Minimum Order",
+    "minimumValue": "From 1 Meter"
+  },
+  "about": {
+    "headline": "About Us",
+    "p1": "As a specialized material distributor based in Zell am See, we supply high-quality synthetic leather solutions to processors and B2B partners across Europe.",
+    "p2": "Our portfolio is engineered for durability, surface precision, and superior processability \u2014 developed for professional automotive and interior applications.",
+    "p3": "With local warehousing in Austria, we ensure short lead times, high availability, and maximum flexibility in order quantities."
   },
   "strengths": [
     {
@@ -39,22 +49,6 @@
     "note": "Flame-retardant options available.",
     "ctaSamples": "Request Samples"
   },
-  "cta": {
-    "headline": "Request Samples for Your Next Project",
-    "nameLabel": "Name",
-    "namePlaceholder": "Your name",
-    "companyLabel": "Company",
-    "companyPlaceholder": "Company name",
-    "emailLabel": "Email",
-    "emailPlaceholder": "your@email.com",
-    "messageLabel": "Message / Material Request",
-    "messagePlaceholder": "Tell us about your project or the materials you need...",
-    "submit": "Request Samples"
-  },
-  "europe": {
-    "line1": "Operating across Germany, Austria and the European Union.",
-    "line2": "Flexible supply. Consistent quality. Efficient processes."
-  },
   "footer": {
     "company": "Leder Stoffe",
     "address": ["Kitzsteinhornstrasse 63", "5700 Zell am See", "Austria"],
@@ -62,7 +56,8 @@
     "phone": "+43 676 4725428",
     "legalNotice": "Legal Notice",
     "privacyPolicy": "Privacy Policy",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "requestSamples": "Request Samples"
   },
   "metadata": {
     "brand": "Leder Stoffe",

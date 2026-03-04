@@ -1,10 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "cyrillic"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
@@ -14,7 +19,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0F1A28",
+  themeColor: "#0F1A26",
 };
 
 export default function RootLayout({
@@ -24,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${inter.variable} antialiased font-sans`}>
+      <body className={`${inter.variable} ${playfair.variable} antialiased font-sans`}>
         {children}
       </body>
     </html>
