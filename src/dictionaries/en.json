@@ -2,99 +2,74 @@
   "nav": {
     "home": "Home",
     "materials": "Materials",
-    "applications": "Applications",
-    "about": "About Us",
-    "contact": "Contact"
+    "about": "About Us"
   },
+  "contactCta": "Contact Us",
   "hero": {
-    "headline": "Premium PU & PVC Automotive Materials",
-    "subheadline": "Synthetic leather for professional interiors – stocked in Austria, delivered across Europe.",
-    "paragraph": "High-quality materials for manufacturers, vehicle converters, and interior specialists.",
-    "heroAlt": "Premium automotive leather interior",
-    "primaryCta": "Request Samples",
-    "secondaryCta": "View Portfolio"
+    "headline": "European Automotive Interior Materials",
+    "subline": "Reliable PU & PVC solutions stocked in Austria and delivered across Europe.",
+    "ctaPrimary": "Contact Us",
+    "ctaSecondary": "View Materials",
+    "heroAlt": "Premium automotive leather interior"
   },
   "trustBar": [
-    "Stocked in Austria",
-    "Europe-wide delivery",
-    "Automotive B2B specialist",
-    "Available from 1 meter"
+    { "title": "Stocked in Austria", "text": "Warehouse in Zell am See" },
+    { "title": "Europe-Wide Shipping", "text": "Delivery across the EU" },
+    { "title": "Automotive B2B Specialist", "text": "Professional-grade materials" },
+    { "title": "Flexible from 1 Meter", "text": "No large minimum orders" }
   ],
-  "materials": {
-    "sectionTitle": "Collections",
-    "sectionSubtitle": "Portfolio",
-    "placeholders": {
-      "image": "Product image",
-      "colors": "Colors",
-      "price": "Price on request",
-      "details": "View Details & Request Samples"
-    },
-    "items": [
+  "portfolio": {
+    "label": "PORTFOLIO",
+    "headline": "Collections",
+    "collections": [
       {
-        "id": "black-matte",
-        "name": "Black Matte",
-        "series": "Black Series",
-        "shortDescription": "Elegant matte surface for premium vehicle interiors.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
+        "series": "BLACK SERIES",
+        "title": "Synthetic Leather Black",
+        "description": "Versatile black surfaces for seats, door panels and trim applications.",
+        "specs": ["PU & PVC options", "Matte and satin finishes", "Fine grain & smooth"]
       },
       {
-        "id": "black-dynamic",
-        "name": "Black Dynamic",
-        "series": "Black Series",
-        "shortDescription": "Fine texture for precise cockpit area processing.",
-        "technicalHighlights": ["Thickness: 1.2 mm", "Martindale: 100k+", "Width: 140 cm"]
+        "series": "BEIGE & SAND",
+        "title": "Synthetic Leather Beige",
+        "description": "Warm toned surfaces for premium interior applications.",
+        "specs": ["Satin & matte finishes", "Perforated options", "Natural grain emboss"]
       },
       {
-        "id": "stone-matte",
-        "name": "Stone Matte",
-        "series": "Stone Series",
-        "shortDescription": "Neutral tone for contemporary design and durable upholstery.",
-        "technicalHighlights": ["Thickness: 1.1 mm", "Martindale: 80k+", "Width: 140 cm"]
-      }
-    ]
-  },
-  "applications": {
-    "title": "Applications",
-    "intro": "Our materials are used in:",
-    "items": [
-      {
-        "title": "Automotive Interiors",
-        "description": "Durable solutions for seats, cockpits, and door panels."
+        "series": "GREY COLLECTION",
+        "title": "Synthetic Leather Grey",
+        "description": "Neutral tones from silver to anthracite for modern interiors.",
+        "specs": ["Cool and warm tones", "Structured textures", "Micro grain patterns"]
       },
       {
-        "title": "Commercial Vehicles",
-        "description": "Easy-care surfaces for heavy-duty use."
-      },
-      {
-        "title": "Yacht Interior",
-        "description": "Premium finishes for marine projects."
+        "series": "COGNAC & BROWN",
+        "title": "Synthetic Leather Brown",
+        "description": "Rich amber and walnut tones for distinguished interiors.",
+        "specs": ["Deep grain character", "Multiple brown shades", "Satin finishes"]
       }
     ]
   },
   "about": {
-    "title": "About Leder Stoffe",
-    "p1": "Where precision meets high standards, quality emerges.",
-    "p2": "Leder Stoffe stands for high-quality synthetic leather that performs reliably in professional applications, offering durability, clean surface finishes, and consistent workability.",
-    "p3": "As a B2B partner, we supply manufacturers and converters with high-performance PU and PVC collections."
+    "headline": "About Us",
+    "p1": "As a specialized material distributor based in Zell am See, we supply high-quality synthetic leather solutions to processors and B2B partners across Europe.",
+    "p2": "Our portfolio is engineered for durability, surface precision, and superior processability — developed for professional automotive and interior applications.",
+    "p3": "With local warehousing in Austria, we ensure short lead times, high availability, and maximum flexibility in order quantities."
   },
-  "contact": {
-    "title": "Request Information",
-    "intro": "Contact us for samples, price lists, or technical specifications.",
-    "phoneLabel": "Phone",
-    "phoneValue": "+49 162 2752072",
-    "phoneValue2": "+43 676 4725428",
-    "emailLabel": "Email",
-    "emailValue": "kunstleder5700@gmail.com",
-    "shipping": "Europe-wide shipping",
-    "minOrder": "Available from 1 meter",
-    "address": ["Leder Stoffe", "Kitzsteinhornstraße 63", "5700 Zell am See", "Austria"]
+  "strengths": {
+    "items": [
+      "Consistent Quality",
+      "Reliable Supply",
+      "Fast European Distribution",
+      "Direct Communication"
+    ]
   },
   "footer": {
-    "positioning": "Austrian distributor for automotive and upholstery materials.",
+    "company": "Leder Stoffe",
+    "tagline": "MATERIAL DISTRIBUTOR | AUSTRIA",
+    "address": ["Kitzsteinhornstrasse 63", "5700 Zell am See", "Austria"],
+    "email": "kunstleder5700@gmail.com",
+    "phone": "+43 676 4725428",
+    "legalNotice": "Legal Notice",
+    "privacyPolicy": "Privacy Policy",
     "rights": "All rights reserved."
-  },
-  "metadata": {
-    "brand": "Leder Stoffe",
-    "distributor": "Material Distributor | Austria"
   }
 }

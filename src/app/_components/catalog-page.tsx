@@ -1,76 +1,57 @@
 "use client";
 
 import NextLink from "next/link";
-import { ArrowRight, Mail, MapPin, Package, Phone, Truck } from "lucide-react";
+import Image from "next/image";
+import { useState } from "react";
+import { Mail, Phone, MapPin, Menu, X } from "lucide-react";
 
 export type Lang = "de" | "en" | "ru";
 
-type MaterialCard = {
-  id: string;
-  name: string;
+type Collection = {
   series: string;
-  shortDescription: string;
-  technicalHighlights: string[];
+  title: string;
+  description: string;
+  specs: string[];
 };
 
 type Dictionary = {
   nav: {
     home: string;
     materials: string;
-    applications: string;
     about: string;
-    contact: string;
   };
+  contactCta: string;
   hero: {
     headline: string;
-    subheadline: string;
-    paragraph: string;
+    subline: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
     heroAlt: string;
-    primaryCta: string;
-    secondaryCta: string;
   };
-  trustBar: string[];
-  materials: {
-    sectionTitle: string;
-    sectionSubtitle: string;
-    placeholders: {
-      image: string;
-      colors: string;
-      price: string;
-      details: string;
-    };
-    items: MaterialCard[];
-  };
-  applications: {
-    title: string;
-    intro: string;
-    items: { title: string; description: string }[];
+  trustBar: { title: string; text: string }[];
+  portfolio: {
+    label: string;
+    headline: string;
+    collections: Collection[];
   };
   about: {
-    title: string;
+    headline: string;
     p1: string;
     p2: string;
     p3: string;
   };
-    contact: {
-      title: string;
-      intro: string;
-      phoneLabel: string;
-      phoneValue: string;
-      phoneValue2: string;
-      emailLabel: string;
-      emailValue: string;
-      shipping: string;
-      minOrder: string;
-      address: string[];
-    };
-  footer: {
-    positioning: string;
-    rights: string;
+  strengths: {
+    items: string[];
   };
-  metadata: {
-    brand: string;
-    distributor: string;
+  footer: {
+    company: string;
+    tagline: string;
+    address: string[];
+    email: string;
+    phone: string;
+    legalNotice: string;
+    privacyPolicy: string;
+    rights: string;
   };
 };
 
@@ -80,272 +61,416 @@ const languages: { code: Lang; label: string }[] = [
   { code: "ru", label: "RU" },
 ];
 
-const trustIcons = [Package, Truck, MapPin, ArrowRight] as const;
+const collectionImages = [
+  "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1540574163026-643ea20ade25?w=800&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=85&fit=crop",
+  "https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=800&q=85&fit=crop",
+];
 
-export default function CatalogPage({ lang, dictionary }: { lang: Lang; dictionary: Dictionary }) {
-  const content = dictionary;
+/* ─────────────────────────────────────────────
+   HEADER
+   Left:  Logo + Subtitle
+   Center: Start | Materialien | Uber uns
+   Right: [Kontakt aufnehmen] gold button + DE|EN|RU
+   ───────────────────────────────────────────── */
+
+function Navigation({ lang, content }: { lang: Lang; content: Dictionary }) {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <main className="min-h-screen bg-[#111111] text-[#ECEAE4]">
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-[#111111]/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-6 py-4">
-          <div>
-            <p className="text-lg font-semibold tracking-tight">{content.metadata.brand}</p>
-            <p className="text-xs uppercase tracking-[0.2em] text-[#C8A774]">{content.metadata.distributor}</p>
-          </div>
-
-          <div className="flex items-center gap-6">
-            <nav className="hidden items-center gap-5 text-sm text-white/80 md:flex">
-              <a href="#home" className="transition hover:text-white">{content.nav.home}</a>
-              <a href="#materials" className="transition hover:text-white">{content.nav.materials}</a>
-              <a href="#collections" className="transition hover:text-white">{content.nav.applications}</a>
-              <a href="#about" className="transition hover:text-white">{content.nav.about}</a>
-              <a href="#contact" className="transition hover:text-white">{content.nav.contact}</a>
-            </nav>
-            <div className="flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-white/70">
-              {languages.map((item, index) => (
-                <span key={item.code} className="inline-flex items-center gap-2">
-                  <NextLink
-                    href={`/${item.code}`}
-                    className={`transition ${item.code === lang ? "text-[#C8A774]" : "text-white/70 hover:text-white"}`}
-                  >
-                    {item.label}
-                  </NextLink>
-                  {index < languages.length - 1 ? <span className="text-white/30">|</span> : null}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section id="home" className="relative overflow-hidden border-b border-white/10 bg-[#0D0D0D]">
-        <div className="relative aspect-[16/9] min-h-[60vh] w-full md:min-h-[72vh]">
-          <img
-            src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=2400&q=80"
-            alt={content.hero.heroAlt}
-            className="h-full w-full object-cover [filter:saturate(0.85)_brightness(0.74)_contrast(1.08)_hue-rotate(8deg)]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/45 to-black/20" aria-hidden="true" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-[#111111]" aria-hidden="true" />
-          <div className="absolute inset-0 shadow-[inset_0_0_140px_rgba(0,0,0,0.45)]" aria-hidden="true" />
-
-          <div className="absolute inset-0 flex items-end">
-            <div className="mx-auto w-full max-w-7xl px-6 pb-12 md:pb-16">
-              <div className="max-w-3xl space-y-5">
-                <h1 className="text-3xl font-semibold leading-tight text-white md:text-5xl">{content.hero.headline}</h1>
-                <p className="max-w-2xl text-base text-white/85 md:text-xl">{content.hero.subheadline}</p>
-                <p className="text-sm text-white/75 md:text-base">{content.hero.paragraph}</p>
-                <div className="flex flex-wrap gap-3 pt-1">
-                  <a
-                    href="#contact"
-                    className="rounded-full bg-[#C8A774] px-5 py-2.5 text-sm font-medium text-[#111111] transition hover:bg-[#d1b486]"
-                  >
-                    {content.hero.primaryCta}
-                  </a>
-                  <a
-                    href="#materials"
-                    className="rounded-full border border-white/25 px-5 py-2.5 text-sm text-white/90 transition hover:border-white/50"
-                  >
-                    {content.hero.secondaryCta}
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-white/10 bg-white/[0.03]">
-        <div className="mx-auto grid max-w-7xl gap-3 px-6 py-5 md:grid-cols-2 lg:grid-cols-4">
-          {content.trustBar.map((item, index) => {
-            const Icon = trustIcons[index] ?? Package;
-            return (
-              <div key={item} className="flex items-start gap-2 rounded-xl border border-white/10 bg-black/25 px-3 py-3 text-sm text-white/80">
-                <Icon size={15} className="mt-0.5 shrink-0 text-[#C8A774]" />
-                <span>{item}</span>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      <section id="materials" className="mx-auto max-w-7xl px-6 py-24">
-        <div className="mb-12">
-          <p className="text-xs uppercase tracking-[0.2em] text-[#C8A774] font-medium">{content.materials.sectionSubtitle}</p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight md:text-4xl">{content.materials.sectionTitle}</h2>
+    <header className="sticky top-0 z-40 border-b border-divider bg-base/95 backdrop-blur-sm">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+        {/* Left: Logo + Subtitle */}
+        <div className="shrink-0">
+          <p className="text-lg font-semibold tracking-tight text-text-primary">
+            {content.footer.company}
+          </p>
+          <p className="text-[10px] uppercase tracking-[0.2em] text-gold">
+            {content.footer.tagline}
+          </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {content.materials.items.map((material) => (
-            <article key={material.id} className="group rounded-3xl border border-white/10 bg-white/[0.02] p-5 transition hover:border-white/20">
-              <div className="flex aspect-[16/10] items-center justify-center rounded-2xl border border-dashed border-white/20 bg-black/40 text-[10px] uppercase tracking-[0.2em] text-white/30 transition group-hover:bg-black/50">
-                {content.materials.placeholders.image}
-              </div>
+        {/* Center: Navigation (desktop) */}
+        <nav className="hidden items-center gap-8 lg:flex">
+          <a
+            href="#home"
+            className="text-[13px] text-text-secondary transition hover:text-text-primary"
+          >
+            {content.nav.home}
+          </a>
+          <a
+            href="#portfolio"
+            className="text-[13px] text-text-secondary transition hover:text-text-primary"
+          >
+            {content.nav.materials}
+          </a>
+          <a
+            href="#about"
+            className="text-[13px] text-text-secondary transition hover:text-text-primary"
+          >
+            {content.nav.about}
+          </a>
+        </nav>
 
-              <div className="mt-6">
-                <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70 font-medium">{material.series}</p>
-                <h3 className="mt-1 text-2xl font-semibold tracking-tight text-white">{material.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-white/60">{material.shortDescription}</p>
-              </div>
+        {/* Right: CTA button + language switcher (desktop) */}
+        <div className="hidden items-center gap-5 lg:flex">
+          <NextLink
+            href={`/${lang}/contact`}
+            className="inline-flex items-center rounded-md bg-gold px-5 py-2.5 text-[13px] font-medium text-base transition hover:bg-gold-hover"
+          >
+            {content.contactCta}
+          </NextLink>
 
-              <ul className="mt-6 space-y-2 text-sm text-white/70">
-                {material.technicalHighlights.slice(0, 3).map((highlight) => (
-                  <li key={highlight} className="flex items-center gap-2">
-                    <span className="h-1 w-1 rounded-full bg-[#C8A774]/40" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-6 rounded-2xl border border-white/10 bg-black/30 p-4">
-                <p className="text-[9px] uppercase tracking-[0.2em] text-[#C8A774]/60 font-medium">{content.materials.placeholders.colors}</p>
-                <div className="mt-3 flex gap-2.5">
-                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#1a1a1a] shadow-inner" />
-                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#2d2d2d] shadow-inner" />
-                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#404040] shadow-inner" />
-                  <span className="h-6 w-6 rounded-full border border-white/20 bg-[#7a7a7a] shadow-inner" />
-                </div>
-              </div>
-
-              <div className="mt-4 rounded-xl border border-white/5 bg-white/5 px-4 py-3 text-sm font-medium text-white/80">
-                {content.materials.placeholders.price}
-              </div>
-
-              <button className="mt-5 w-full rounded-full border border-[#C8A774]/30 bg-[#C8A774]/5 px-4 py-2.5 text-sm font-medium text-[#C8A774] transition hover:bg-[#C8A774] hover:text-[#111111]">
-                {content.materials.placeholders.details}
-              </button>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="collections" className="border-y border-white/10 bg-white/[0.02]">
-        <div className="mx-auto max-w-7xl px-6 py-14">
-          <h3 className="text-3xl font-semibold">{content.applications.title}</h3>
-          <p className="mt-2 text-white/75">{content.applications.intro}</p>
-          <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {content.applications.items.map((application) => (
-              <div key={application.title} className="rounded-2xl border border-white/10 bg-black/20 p-5">
-                <p className="text-sm font-medium text-white">{application.title}</p>
-                <p className="mt-2 text-sm text-white/75">{application.description}</p>
-              </div>
+          <div className="flex items-center gap-1 text-[11px] uppercase tracking-[0.15em]">
+            {languages.map((item, index) => (
+              <span key={item.code} className="inline-flex items-center gap-1">
+                <NextLink
+                  href={`/${item.code}`}
+                  className={`px-1 py-0.5 transition ${
+                    item.code === lang
+                      ? "text-gold"
+                      : "text-text-secondary/50 hover:text-text-primary"
+                  }`}
+                >
+                  {item.label}
+                </NextLink>
+                {index < languages.length - 1 && (
+                  <span className="text-text-secondary/20">|</span>
+                )}
+              </span>
             ))}
           </div>
         </div>
-      </section>
 
-      <section id="about" className="mx-auto max-w-7xl px-6 py-14">
-        <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr]">
-          <div>
-            <h3 className="text-3xl font-semibold">{content.about.title}</h3>
-            <p className="mt-4 text-white/75">{content.about.p1}</p>
-            <p className="mt-4 text-white/75">{content.about.p2}</p>
-            <p className="mt-4 text-white/75">{content.about.p3}</p>
+        {/* Mobile toggle */}
+        <button
+          className="flex items-center justify-center lg:hidden text-text-primary"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
+        >
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+
+      {/* Mobile nav */}
+      {menuOpen && (
+        <div className="border-t border-divider bg-base px-6 py-5 lg:hidden">
+          <nav className="flex flex-col gap-4 text-[13px] text-text-secondary">
+            <a href="#home" onClick={() => setMenuOpen(false)} className="transition hover:text-text-primary">
+              {content.nav.home}
+            </a>
+            <a href="#portfolio" onClick={() => setMenuOpen(false)} className="transition hover:text-text-primary">
+              {content.nav.materials}
+            </a>
+            <a href="#about" onClick={() => setMenuOpen(false)} className="transition hover:text-text-primary">
+              {content.nav.about}
+            </a>
+          </nav>
+          <div className="mt-5">
+            <NextLink
+              href={`/${lang}/contact`}
+              className="inline-flex items-center rounded-md bg-gold px-5 py-2.5 text-[13px] font-medium text-base transition hover:bg-gold-hover"
+              onClick={() => setMenuOpen(false)}
+            >
+              {content.contactCta}
+            </NextLink>
           </div>
+          <div className="mt-4 flex items-center gap-1 text-[11px] uppercase tracking-[0.15em]">
+            {languages.map((item, index) => (
+              <span key={item.code} className="inline-flex items-center gap-1">
+                <NextLink
+                  href={`/${item.code}`}
+                  className={`px-1 py-0.5 transition ${
+                    item.code === lang
+                      ? "text-gold"
+                      : "text-text-secondary/50 hover:text-text-primary"
+                  }`}
+                >
+                  {item.label}
+                </NextLink>
+                {index < languages.length - 1 && (
+                  <span className="text-text-secondary/20">|</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
+  );
+}
 
-          <div className="space-y-3 rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-sm text-white/80">
-            <div className="flex items-start gap-2 rounded-lg border border-white/10 px-3 py-2">
-              <Truck size={15} className="mt-0.5" />
-              <p>{content.contact.shipping}</p>
-            </div>
-            <div className="flex items-start gap-2 rounded-lg border border-white/10 px-3 py-2">
-              <MapPin size={15} className="mt-0.5" />
-              <p>{content.contact.address[3]}</p>
+/* ─── Hero ─── */
+
+function HeroSection({ lang, content }: { lang: Lang; content: Dictionary }) {
+  return (
+    <section id="home" className="relative overflow-hidden bg-base">
+      <div className="relative min-h-[70vh] w-full md:min-h-[80vh]">
+        <Image
+          src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=2400&q=80"
+          alt={content.hero.heroAlt}
+          fill
+          className="object-cover animate-slow-zoom [filter:saturate(0.3)_brightness(0.18)_contrast(1.1)]"
+          priority
+        />
+        <div className="absolute inset-0 bg-base/50" aria-hidden="true" />
+
+        <div className="absolute inset-0 flex items-center">
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <div className="max-w-2xl">
+              <h1 className="text-4xl font-bold leading-tight text-text-primary md:text-6xl text-balance font-serif">
+                {content.hero.headline}
+              </h1>
+              <p className="mt-6 text-lg leading-relaxed text-text-secondary md:text-xl">
+                {content.hero.subline}
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                {/* Primary CTA: Kontakt aufnehmen (gold button) */}
+                <NextLink
+                  href={`/${lang}/contact`}
+                  className="inline-flex items-center rounded-md bg-gold px-7 py-3.5 text-sm font-medium text-base transition hover:bg-gold-hover"
+                >
+                  {content.hero.ctaPrimary}
+                </NextLink>
+                {/* Secondary CTA: Materialien ansehen (outline) */}
+                <a
+                  href="#portfolio"
+                  className="inline-flex items-center rounded-md border border-gold/40 px-7 py-3.5 text-sm font-medium text-gold transition hover:border-gold hover:text-gold-hover"
+                >
+                  {content.hero.ctaSecondary}
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
+  );
+}
 
-      <section id="contact" className="bg-black/25">
-        <div className="mx-auto max-w-7xl px-6 py-16">
-          <div className="mb-10">
-            <h3 className="text-3xl font-semibold">{content.contact.title}</h3>
-            <p className="mt-4 max-w-2xl text-white/75">{content.contact.intro}</p>
+/* ─── Trust Bar ─── */
+
+function TrustBar({ content }: { content: Dictionary }) {
+  return (
+    <section className="border-b border-divider bg-surface">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 px-6">
+        {content.trustBar.map((item, index) => (
+          <div
+            key={index}
+            className={`flex flex-col items-center px-6 py-8 text-center ${
+              index < content.trustBar.length - 1
+                ? "border-b sm:border-b-0 sm:border-r border-divider"
+                : ""
+            }`}
+          >
+            <p className="text-[11px] font-medium uppercase tracking-[0.15em] text-gold">
+              {item.title}
+            </p>
+            <p className="mt-1.5 text-sm text-text-secondary">{item.text}</p>
           </div>
+        ))}
+      </div>
+    </section>
+  );
+}
 
-          <div className="grid gap-8 md:grid-cols-2">
-            <div className="space-y-6">
-              <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 text-sm text-white/80">
-                <div className="flex items-start gap-4">
-                  <MapPin size={20} className="mt-1 shrink-0 text-[#C8A774]" />
-                  <div className="space-y-1">
-                    {content.contact.address.map((line, index) => (
-                      <p key={line} className={index === 0 ? "font-semibold text-white" : ""}>
-                        {line}
-                      </p>
-                    ))}
-                  </div>
-                </div>
+/* ─── Portfolio ─── */
+
+function PortfolioSection({ content }: { content: Dictionary }) {
+  return (
+    <section id="portfolio" className="bg-base py-20 md:py-28">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-12">
+          <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
+            {content.portfolio.label}
+          </p>
+          <h2 className="mt-3 text-3xl font-bold text-text-primary md:text-4xl font-serif">
+            {content.portfolio.headline}
+          </h2>
+        </div>
+
+        <div className="grid gap-5 sm:grid-cols-2">
+          {content.portfolio.collections.map((col, index) => (
+            <div
+              key={index}
+              className="group relative overflow-hidden rounded-md border border-divider bg-card-bg"
+            >
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <Image
+                  src={collectionImages[index % collectionImages.length]}
+                  alt={col.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-[1.03] [filter:saturate(0.4)_brightness(0.5)]"
+                />
+                <div className="absolute inset-0 bg-base/20" />
               </div>
 
-              <div className="flex flex-wrap gap-3">
-                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-white/20">
-                  <Truck size={14} className="text-[#C8A774]" />
-                  <span>{content.contact.shipping}</span>
-                </div>
-                <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 transition hover:border-white/20">
-                  <Package size={14} className="text-[#C8A774]" />
-                  <span>{content.contact.minOrder}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:border-[#C8A774]/50">
-                <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C8A774]/10 text-[#C8A774] transition group-hover:bg-[#C8A774]/20">
-                    <Phone size={20} />
-                  </div>
-                  <div className="flex-1 overflow-hidden">
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70">{content.contact.phoneLabel}</p>
-                    <div className="mt-1 space-y-1">
-                      <a
-                        href={`tel:${content.contact.phoneValue.replace(/\s/g, "")}`}
-                        className="block text-xl font-medium text-white transition hover:text-[#C8A774]"
-                      >
-                        {content.contact.phoneValue}
-                      </a>
-                      <a
-                        href={`tel:${content.contact.phoneValue2.replace(/\s/g, "")}`}
-                        className="block text-xl font-medium text-white transition hover:text-[#C8A774]"
-                      >
-                        {content.contact.phoneValue2}
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="group rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition hover:border-[#C8A774]/50">
-                <div className="flex items-start gap-5">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#C8A774]/10 text-[#C8A774] transition group-hover:bg-[#C8A774]/20">
-                    <Mail size={20} />
-                  </div>
-                  <div className="flex-1 overflow-hidden">
-                    <p className="text-[10px] uppercase tracking-[0.2em] text-[#C8A774]/70">{content.contact.emailLabel}</p>
-                    <a
-                      href={`mailto:${content.contact.emailValue}`}
-                      className="mt-1 block truncate text-xl font-medium text-white transition hover:text-[#C8A774]"
+              <div className="p-6">
+                <p className="text-[10px] font-medium uppercase tracking-[0.2em] text-gold">
+                  {col.series}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold text-text-primary">
+                  {col.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-text-secondary">
+                  {col.description}
+                </p>
+                <ul className="mt-4 flex flex-col gap-1.5">
+                  {col.specs.map((spec, si) => (
+                    <li
+                      key={si}
+                      className="flex items-center gap-2 text-[13px] text-text-secondary"
                     >
-                      {content.contact.emailValue}
-                    </a>
-                  </div>
-                </div>
+                      <span className="inline-block h-1 w-1 shrink-0 rounded-full bg-gold" />
+                      {spec}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── About Teaser ─── */
+
+function AboutSection({ lang, content }: { lang: Lang; content: Dictionary }) {
+  return (
+    <section id="about" className="bg-surface py-20 md:py-28">
+      <div className="mx-auto max-w-2xl px-6 text-center">
+        <h2 className="text-3xl font-bold text-text-primary md:text-4xl font-serif">
+          {content.about.headline}
+        </h2>
+        <div className="mt-10 flex flex-col gap-5 text-base leading-relaxed text-text-secondary">
+          <p>{content.about.p1}</p>
+          <p>{content.about.p2}</p>
+          <p>{content.about.p3}</p>
+        </div>
+        <div className="mt-10">
+          <NextLink
+            href={`/${lang}/contact`}
+            className="inline-flex items-center rounded-md bg-gold px-7 py-3.5 text-sm font-medium text-base transition hover:bg-gold-hover"
+          >
+            {content.contactCta}
+          </NextLink>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Core Strengths ─── */
+
+function StrengthsSection({ content }: { content: Dictionary }) {
+  return (
+    <section className="border-t border-b border-divider bg-base py-16 md:py-20">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+          {content.strengths.items.map((item) => (
+            <div key={item} className="text-center">
+              <p className="text-sm font-medium text-text-primary">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─── Footer ─── */
+
+function SiteFooter({ content }: { content: Dictionary }) {
+  return (
+    <footer id="footer" className="bg-surface">
+      <div className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {/* Company */}
+          <div>
+            <p className="text-base font-semibold text-text-primary">
+              {content.footer.company}
+            </p>
+            <p className="mt-1 text-[10px] uppercase tracking-[0.2em] text-gold">
+              {content.footer.tagline}
+            </p>
+          </div>
+
+          {/* Address */}
+          <div className="flex items-start gap-3">
+            <MapPin size={15} className="mt-0.5 shrink-0 text-gold/60" />
+            <div className="text-sm leading-relaxed text-text-secondary">
+              {content.footer.address.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact */}
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-3">
+              <Mail size={15} className="shrink-0 text-gold/60" />
+              <a
+                href={`mailto:${content.footer.email}`}
+                className="text-sm text-text-secondary transition hover:text-text-primary"
+              >
+                {content.footer.email}
+              </a>
+            </div>
+            <div className="flex items-center gap-3">
+              <Phone size={15} className="shrink-0 text-gold/60" />
+              <a
+                href={`tel:${content.footer.phone.replace(/\s/g, "")}`}
+                className="text-sm text-text-secondary transition hover:text-text-primary"
+              >
+                {content.footer.phone}
+              </a>
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div className="flex flex-col gap-2 text-sm text-text-secondary/60">
+            <a href="#" className="transition hover:text-text-secondary">
+              {content.footer.legalNotice}
+            </a>
+            <a href="#" className="transition hover:text-text-secondary">
+              {content.footer.privacyPolicy}
+            </a>
           </div>
         </div>
-      </section>
 
-      <footer className="border-t border-white/10 bg-[#0C0C0C]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-6 text-xs text-white/60 md:flex-row md:items-center md:justify-between">
-          <p>{content.metadata.brand} - {content.footer.positioning}</p>
-          <p>
-            © {new Date().getFullYear()} {content.metadata.brand}. {content.footer.rights}
+        <div className="mt-10 border-t border-divider pt-6">
+          <p className="text-center text-xs text-text-secondary/40">
+            {"© "}
+            {new Date().getFullYear()} {content.footer.company}.{" "}
+            {content.footer.rights}
           </p>
         </div>
-      </footer>
+      </div>
+    </footer>
+  );
+}
+
+/* ─── Main Page ─── */
+
+export default function CatalogPage({
+  lang,
+  dictionary,
+}: {
+  lang: Lang;
+  dictionary: Dictionary;
+}) {
+  return (
+    <main className="min-h-screen bg-base text-text-primary">
+      <Navigation lang={lang} content={dictionary} />
+      <HeroSection lang={lang} content={dictionary} />
+      <TrustBar content={dictionary} />
+      <PortfolioSection content={dictionary} />
+      <AboutSection lang={lang} content={dictionary} />
+      <StrengthsSection content={dictionary} />
+      <SiteFooter content={dictionary} />
     </main>
   );
 }
