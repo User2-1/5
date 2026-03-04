@@ -30,36 +30,36 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Dark luxury palette */
-  --color-base: #0B0D10;
-  --color-surface: #111418;
-  --color-card-bg: #14181D;
-  --color-divider: #1E242C;
-  --color-text-primary: #E8E6E3;
-  --color-text-secondary: #A7A7A7;
+  --color-base: #0B0B0C;
+  --color-surface: #111214;
+  --color-card-bg: #17181B;
+  --color-divider: #232428;
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B3B3B3;
   --color-gold: #C6A86B;
   --color-gold-hover: #D4B87A;
+  --color-gold-dark: #A88F5A;
 }
 
 :root {
   --radius: 0.375rem;
-  --background: #0B0D10;
-  --foreground: #E8E6E3;
-  --card: #14181D;
-  --card-foreground: #E8E6E3;
-  --popover: #14181D;
-  --popover-foreground: #E8E6E3;
+  --background: #0B0B0C;
+  --foreground: #FFFFFF;
+  --card: #17181B;
+  --card-foreground: #FFFFFF;
+  --popover: #17181B;
+  --popover-foreground: #FFFFFF;
   --primary: #C6A86B;
-  --primary-foreground: #0B0D10;
-  --secondary: #111418;
-  --secondary-foreground: #E8E6E3;
-  --muted: #1E242C;
-  --muted-foreground: #A7A7A7;
+  --primary-foreground: #0B0B0C;
+  --secondary: #111214;
+  --secondary-foreground: #FFFFFF;
+  --muted: #232428;
+  --muted-foreground: #B3B3B3;
   --accent: #C6A86B;
-  --accent-foreground: #0B0D10;
+  --accent-foreground: #0B0B0C;
   --destructive: #8B2020;
-  --border: #1E242C;
-  --input: #1E242C;
+  --border: #232428;
+  --input: #232428;
   --ring: #C6A86B;
 }
 
@@ -72,7 +72,6 @@
   }
 }
 
-/* Slow zoom animation for hero background */
 @keyframes slowZoom {
   0%   { transform: scale(1); }
   100% { transform: scale(1.06); }
@@ -82,7 +81,6 @@
   animation: slowZoom 25s ease-in-out infinite alternate;
 }
 
-/* Hide Next.js error overlay portal */
 nextjs-portal {
   display: none !important;
 }

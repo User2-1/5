@@ -2,15 +2,14 @@
   "nav": {
     "home": "Start",
     "materials": "Materialien",
-    "applications": "Anwendungen",
-    "about": "Über uns",
-    "contact": "Kontakt"
+    "about": "Über uns"
   },
+  "contactCta": "Kontakt aufnehmen",
   "hero": {
     "headline": "Europäische Automotive-Interieur-Materialien",
     "subline": "Zuverlässige PU- & PVC-Lösungen ab Lager Österreich mit europaweiter Lieferung.",
-    "ctaSamples": "Muster anfragen",
-    "ctaContact": "Kontakt aufnehmen",
+    "ctaPrimary": "Kontakt aufnehmen",
+    "ctaSecondary": "Materialien ansehen",
     "heroAlt": "Premium Automotive Lederinterieur"
   },
   "trustBar": [
@@ -71,7 +70,6 @@
     "phone": "+43 676 4725428",
     "legalNotice": "Impressum",
     "privacyPolicy": "Datenschutz",
-    "rights": "Alle Rechte vorbehalten.",
-    "requestSamples": "Muster anfragen"
+    "rights": "Alle Rechte vorbehalten."
   }
 }

@@ -2,15 +2,14 @@
   "nav": {
     "home": "Home",
     "materials": "Materials",
-    "applications": "Applications",
-    "about": "About Us",
-    "contact": "Contact"
+    "about": "About Us"
   },
+  "contactCta": "Contact Us",
   "hero": {
     "headline": "European Automotive Interior Materials",
     "subline": "Reliable PU & PVC solutions stocked in Austria and delivered across Europe.",
-    "ctaSamples": "Request Samples",
-    "ctaContact": "Contact Us",
+    "ctaPrimary": "Contact Us",
+    "ctaSecondary": "View Materials",
     "heroAlt": "Premium automotive leather interior"
   },
   "trustBar": [
@@ -71,7 +70,6 @@
     "phone": "+43 676 4725428",
     "legalNotice": "Legal Notice",
     "privacyPolicy": "Privacy Policy",
-    "rights": "All rights reserved.",
-    "requestSamples": "Request Samples"
+    "rights": "All rights reserved."
   }
 }
